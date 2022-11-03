@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/constants/fonts.dart';
+import 'package:greymatter/screens/psychologist_screen/request_sent_successful_screen.dart';
 
 class FormScreen extends StatelessWidget {
   const FormScreen({Key? key}) : super(key: key);
@@ -190,7 +191,9 @@ class FormScreen extends StatelessWidget {
                       height: 56.h,
                       width: 380.w,
                       child: MaterialButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => RequestSentSuccessfulScreen()));
+                        },
                         child: Center(
                           child: Text('Submit', style: kManRope_500_16_white,),
                         ),
@@ -198,7 +201,6 @@ class FormScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(16))
                         ),
-
                       ),
                     )
                   ],
