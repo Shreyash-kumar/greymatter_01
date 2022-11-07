@@ -5,6 +5,8 @@ import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/screens/psychologist_screen/home_screens/upcoming_meetings.dart';
 import '../../../constants/fonts.dart';
 import '../../../widgets/shared/buttons/custom_active_text_button.dart';
+import '../home_screens/canceled_meeting_screens.dart';
+import '../home_screens/completed_meeting_screens.dart';
 
 class PsychologistHomeScreen extends StatefulWidget {
   const PsychologistHomeScreen({Key? key}) : super(key: key);
@@ -184,9 +186,7 @@ class _PsychologistHomeScreenState extends State<PsychologistHomeScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      index = 1;
-                    });
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => CanceledMeetingScreen()));
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -210,9 +210,7 @@ class _PsychologistHomeScreenState extends State<PsychologistHomeScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      index = 2;
-                    });
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => CompletedMeetingScreen()));
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
