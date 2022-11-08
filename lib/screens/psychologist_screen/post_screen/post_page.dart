@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../constants/colors.dart';
-import '../../constants/fonts.dart';
-import '../psychologist_screen/post_screen/psychologist_create_post.dart';
 
-class PostPage extends StatelessWidget {
-  const PostPage({Key? key}) : super(key: key);
+import '../../../constants/colors.dart';
+import '../../../constants/fonts.dart';
+
+class PsychologistPostPage extends StatelessWidget {
+  const PsychologistPostPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +64,46 @@ class PostPage extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SvgPicture.asset(
-                                  'assets/icons/kebabMenu.svg',
-                                  height: 24.h,
-                                  width: 24.w,
+                                PopupMenuButton<int>(
+                                  padding: EdgeInsets.zero,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(8)),
+                                  ),
+                                  icon: SvgPicture.asset(
+                                    'assets/icons/kebabMenu.svg',
+                                    height: 24.h,
+                                    width: 24.w,
+                                  ),
+                                  itemBuilder: (context) => [
+                                    // PopupMenuItem 1
+                                    PopupMenuItem(
+                                      value: 1,
+                                      // row with 2 children
+                                      child: Text(
+                                        "Share",
+                                        style: kManRope_400_20_Black,
+                                      ),
+                                    ),
+                                    // PopupMenuItem 2
+                                    PopupMenuItem(
+                                      value: 2,
+                                      // row with two children
+                                      child: Text("Save",
+                                          style: kManRope_400_20_Black),
+                                    ),
+                                    PopupMenuItem(
+                                      value: 3,
+                                      // row with two children
+                                      child: Text("Hide",
+                                          style: kManRope_400_20_Black),
+                                    ),
+                                  ],
+                                  offset: Offset(0, 100),
+                                  color: Colors.white,
+                                  elevation: 2,
+                                  // on selected we show the dialog box
+                                  onSelected: (value) {},
                                 ),
                               ],
                             ),
@@ -140,10 +176,7 @@ class PostPage extends StatelessWidget {
           Positioned(
             bottom: 100.h,
             child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const PsychologistCreatePostScreen()));
-              },
+              onTap: () {},
               child: SvgPicture.asset(
                 'assets/icons/addPost_1.svg',
                 height: 72.h,

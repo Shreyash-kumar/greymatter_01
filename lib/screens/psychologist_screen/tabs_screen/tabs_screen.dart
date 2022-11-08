@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:greymatter/constants/colors.dart';
+import 'package:greymatter/screens/psychologist_screen/tabs_screen/pofile_screen.dart';
+import 'package:greymatter/screens/psychologist_screen/tabs_screen/post_screen.dart';
 import 'psychologist_home_screen.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -25,9 +27,9 @@ class _TabsScreenState extends State<TabsScreen> {
         body: [
           PsychologistHomeScreen(),
           PsychologistHomeScreen(),
+          PsychologistPostScreen(),
           PsychologistHomeScreen(),
-          PsychologistHomeScreen(),
-          PsychologistHomeScreen(),
+          PsychologistProfileScreen(),
         ].elementAt(_index),
         bottomNavigationBar: Container(
           padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 16.h),
