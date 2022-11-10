@@ -7,9 +7,9 @@ import 'package:greymatter/constants/fonts.dart';
 import 'package:greymatter/screens/profile_screens/agreement_screen.dart';
 import 'package:greymatter/screens/profile_screens/help_and_support_screen.dart';
 import 'package:greymatter/screens/profile_screens/order_history_screen.dart';
-import 'package:greymatter/screens/profile_screens/personal_info_screen.dart';
 
 import '../../../constants/colors.dart';
+import '../profile_screens/personal_info_screen.dart';
 
 class PsychologistProfileScreen extends StatefulWidget {
   const PsychologistProfileScreen({Key? key}) : super(key: key);
@@ -81,7 +81,7 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const PersonalInfoScreen()));
+                    builder: (context) => const PsychologistPersonalInfoScreen()));
               },
               child: Container(
                 color: Colors.transparent,
@@ -96,13 +96,14 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) =>
-                              const PersonalInfoScreen()));
+                              const PsychologistPersonalInfoScreen()));
                         },
                         child: SvgPicture.asset(
                           'assets/icons/rightArrow.svg',
                           height: 12,
                           width: 6,
-                        )),
+                        ),
+                    ),
                   ],
                 ),
               ),
@@ -208,7 +209,8 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const OrderHistoryScreen()));
                     },
                     child: SvgPicture.asset(
                       'assets/icons/rightArrow.svg',
