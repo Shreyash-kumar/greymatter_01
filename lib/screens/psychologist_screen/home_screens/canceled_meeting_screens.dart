@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../../constants/colors.dart';
 import '../../../constants/fonts.dart';
 import '../../../widgets/app_bar/app_bar.dart';
@@ -13,12 +14,10 @@ class CanceledMeetingScreen extends StatefulWidget {
 }
 
 class _CanceledMeetingScreenState extends State<CanceledMeetingScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(appBarText: 'Canceled'),
+      appBar: CustomAppBar(appBarText: 'Cancelled'),
       body: Padding(
         padding: EdgeInsets.only(left: 24.w, top: 40.h, right: 24.h),
         child: Column(
@@ -35,13 +34,20 @@ class _CanceledMeetingScreenState extends State<CanceledMeetingScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
-                  icon: SvgPicture.asset('assets/icons/calender.svg', height: 24.h, width: 24.w,),
+                  icon: SvgPicture.asset(
+                    'assets/icons/calender.svg',
+                    height: 24.h,
+                    width: 24.w,
+                  ),
                   itemBuilder: (context) => [
                     // PopupMenuItem 1
                     PopupMenuItem(
                       value: 1,
                       // row with 2 children
-                      child: Text("This month", style: kManRope_400_20_Black,),
+                      child: Text(
+                        "This month",
+                        style: kManRope_400_20_Black,
+                      ),
                     ),
                     // PopupMenuItem 2
                     PopupMenuItem(
@@ -59,9 +65,7 @@ class _CanceledMeetingScreenState extends State<CanceledMeetingScreen> {
                   color: Colors.white,
                   elevation: 2,
                   // on selected we show the dialog box
-                  onSelected: (value) {
-
-                  },
+                  onSelected: (value) {},
                 ),
               ],
             ),
@@ -81,55 +85,54 @@ class _CanceledMeetingScreenState extends State<CanceledMeetingScreen> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Container(
-                              //width: 280.h,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        width: 48.w,
-                                        height: 48.h,
-                                        decoration: BoxDecoration(
-                                            color: Colors.grey,
-                                            borderRadius:
-                                                BorderRadius.circular(8)),
-                                      ),
-                                      SizedBox(width: 8.w),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text('Priyanka singh',
-                                              style: kManRope_400_16_Black),
-                                          //SizedBox(width: 10,),
-                                          SizedBox(height: 8.h),
-                                          Row(
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 48.w,
+                                      height: 48.h,
+                                      clipBehavior: Clip.hardEdge,
+                                      decoration: BoxDecoration(
+                                          color: Colors.grey,
+                                          borderRadius:
+                                              BorderRadius.circular(8)),
+                                      child: Image.asset(
+                                          'assets/images/userP.png'),
+                                    ),
+                                    SizedBox(width: 8.w),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Priyanka singh',
+                                            style: kManRope_400_16_Black),
+                                        //SizedBox(width: 10,),
+                                        SizedBox(height: 8.h),
+                                        SizedBox(
+                                          width: 270.w,
+                                          child: Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text('Anxiety',
                                                   style:
                                                       kManRope_400_14_626A6A),
-                                              SizedBox(
-                                                width: 110.w,
-                                              ),
                                               Text(
                                                 '10 June 2022, 8:00AM',
                                                 style: kManRope_400_14_626A6A,
                                               ),
                                             ],
                                           ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                             SizedBox(height: 20.h),
                           ],

@@ -67,3 +67,60 @@ class CustomSecondaryButton extends StatelessWidget {
     );
   }
 }
+
+class AppButtonTransparent extends StatefulWidget {
+  final Function onTap;
+  final String title;
+  const AppButtonTransparent(
+      {Key? key, required this.onTap, required this.title})
+      : super(key: key);
+
+  @override
+  State<AppButtonTransparent> createState() => _AppButtonTransparentState();
+}
+
+class _AppButtonTransparentState extends State<AppButtonTransparent> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(color: k006D77, width: 1),
+      ),
+      onPressed: () {
+        widget.onTap();
+      },
+      child: Text(widget.title, style: kManRope_500_16_001314),
+    );
+  }
+}
+
+class AppButton extends StatefulWidget {
+  final Function onTap;
+  final String title;
+  const AppButton({
+    Key? key,
+    required this.onTap,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  State<AppButton> createState() => _AppButtonState();
+}
+
+class _AppButtonState extends State<AppButton> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      color: k006D77,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(color: k006D77, width: 1),
+      ),
+      onPressed: () {
+        widget.onTap();
+      },
+      child: Text(widget.title, style: kManRope_500_16_white),
+    );
+  }
+}

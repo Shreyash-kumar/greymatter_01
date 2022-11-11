@@ -11,7 +11,7 @@ class SecondaryCardButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16.h),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(color: k91C9CE),
       ),
       child: Center(

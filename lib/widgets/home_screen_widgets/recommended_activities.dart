@@ -5,6 +5,8 @@ import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/constants/fonts.dart';
 import 'package:greymatter/widgets/shared/buttons/costom_secondary_text_w_icon_button.dart';
 
+import '../../screens/goal_screens/add_activity.dart';
+
 class RecommendedActivities extends StatefulWidget {
   const RecommendedActivities({Key? key}) : super(key: key);
 
@@ -162,8 +164,8 @@ class _RecommendedVideosState extends State<RecommendedActivities> {
               height: 56.h,
               child: CustomSecondaryButton(
                 onPressed: () {
-                  /*Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const AllActivities()));*/
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AddActivityScreen()));
                 },
                 text: 'View All Activities',
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greymatter/screens/psychologist_screen/profile_screens/basic_details_widget.dart';
 import 'package:greymatter/widgets/app_bar/app_bar.dart';
+
 import '../../../constants/colors.dart';
 import '../../../constants/fonts.dart';
 import 'doctor_profile_widget.dart';
@@ -16,8 +17,7 @@ class PsychologistPersonalInfoScreen extends StatefulWidget {
 
 class _PsychologistPersonalInfoScreenState
     extends State<PsychologistPersonalInfoScreen> {
-
-  bool flag =  true;
+  bool flag = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +38,8 @@ class _PsychologistPersonalInfoScreenState
                   width: 106.w,
                   decoration: const BoxDecoration(
                       color: Color(0xFF006D77), shape: BoxShape.circle),
+                  child: Image.asset('assets/images/userP.png'),
+                  clipBehavior: Clip.hardEdge,
                 ),
               ),
               SizedBox(
@@ -56,21 +58,26 @@ class _PsychologistPersonalInfoScreenState
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
-                        flag = true ;
+                        flag = true;
                       });
                     },
                     child: Column(
                       children: [
-                        Text('Basic Details', style: flag ? kManRope_700_16_001314 : kManRope_400_16_626A6A,),
+                        Text(
+                          'Basic Details',
+                          style: flag
+                              ? kManRope_700_16_001314
+                              : kManRope_400_16_626A6A,
+                        ),
                         SizedBox(
                           height: 10.h,
                         ),
                         Container(
                           height: 1.5.h,
                           width: 100.w,
-                          color: flag ? k006D77: kWhiteBGColor,
+                          color: flag ? k006D77 : kWhiteBGColor,
                         ),
                       ],
                     ),
@@ -79,14 +86,19 @@ class _PsychologistPersonalInfoScreenState
                     width: 36.w,
                   ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         flag = false;
                       });
                     },
                     child: Column(
                       children: [
-                        Text('Doctor Profile', style:flag ? kManRope_400_16_626A6A : kManRope_700_16_001314,),
+                        Text(
+                          'Doctor Profile',
+                          style: flag
+                              ? kManRope_400_16_626A6A
+                              : kManRope_700_16_001314,
+                        ),
                         SizedBox(
                           height: 10.h,
                         ),

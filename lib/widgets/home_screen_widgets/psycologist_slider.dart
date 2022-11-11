@@ -21,9 +21,10 @@ class PsychologistSlider extends StatelessWidget {
               Container(
                 width: 85.w,
                 height: 85.h,
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(24)),
+                clipBehavior: Clip.hardEdge,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                child: Image.asset('assets/images/userP.png'),
               ),
               SizedBox(width: 8.w),
               Column(
@@ -37,7 +38,10 @@ class PsychologistSlider extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.star, color: kDFBE13,),
+                      Icon(
+                        Icons.star,
+                        color: kDFBE13,
+                      ),
                       SizedBox(width: 4.w),
                       Text('4.0', style: kManRope_400_12_001314),
                       SizedBox(width: 4.w),
@@ -59,9 +63,10 @@ class PsychologistSlider extends StatelessWidget {
               Container(
                 width: 85.w,
                 height: 85.h,
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(24)),
+                clipBehavior: Clip.hardEdge,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                child: Image.asset('assets/images/userP.png'),
               ),
               SizedBox(width: 8.w),
               Column(
@@ -75,7 +80,10 @@ class PsychologistSlider extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.star, color: kDFBE13,),
+                      Icon(
+                        Icons.star,
+                        color: kDFBE13,
+                      ),
                       SizedBox(width: 4.w),
                       Text('4.0', style: kManRope_400_12_001314),
                       SizedBox(width: 4.w),

@@ -9,6 +9,7 @@ import 'package:greymatter/widgets/onboarding_screen_widgets/onb_slide.dart';
 import 'package:greymatter/widgets/shared/buttons/custom_text_w_icon_button.dart';
 
 import '../../widgets/shared/buttons/costom_secondary_text_w_icon_button.dart';
+import '../psychologist_screen/form_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
@@ -155,7 +156,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               width: 1.sw,
               height: 56.h,
               child: CustomSecondaryButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (ctx) => FormScreen()));
+                },
                 text: 'I am a psychologist',
               ),
             ),

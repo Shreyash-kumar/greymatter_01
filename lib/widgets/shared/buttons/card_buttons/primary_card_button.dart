@@ -11,11 +11,10 @@ class PrimaryCardButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16.h),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-        color: k006D77
-        //border: Border.all(color: k91C9CE),
-      ),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(10), color: k006D77
+              //border: Border.all(color: k91C9CE),
+              ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

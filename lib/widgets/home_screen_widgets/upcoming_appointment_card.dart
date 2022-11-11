@@ -52,9 +52,11 @@ class UpcomingAppointmentCard extends StatelessWidget {
                       Container(
                         width: 48.w,
                         height: 48.h,
+                        clipBehavior: Clip.hardEdge,
                         decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(8)),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Image.asset('assets/images/userP.png'),
                       ),
                       SizedBox(width: 8.w),
                       Column(

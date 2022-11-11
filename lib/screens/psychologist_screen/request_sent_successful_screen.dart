@@ -84,7 +84,7 @@ class _RequestSentSuccessfulScreenState
                   height: 16.h,
                 ),
                 Text(
-                  'Our atroxis partner will not charged you for any work',
+                  'Our AtarAxis partner will not charged you for any work',
                   style: kManRope_400_14_626A6A,
                 ),
                 SizedBox(
@@ -96,6 +96,7 @@ class _RequestSentSuccessfulScreenState
                     Container(
                       height: 88.h,
                       width: 88.w,
+                      clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                         color: Colors.grey,

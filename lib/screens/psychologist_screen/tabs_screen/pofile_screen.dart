@@ -15,7 +15,8 @@ class PsychologistProfileScreen extends StatefulWidget {
   const PsychologistProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<PsychologistProfileScreen> createState() => _PsychologistProfileScreenState();
+  State<PsychologistProfileScreen> createState() =>
+      _PsychologistProfileScreenState();
 }
 
 class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
@@ -46,6 +47,8 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
                   width: 55.w,
                   decoration: const BoxDecoration(
                       color: Colors.grey, shape: BoxShape.circle),
+                  clipBehavior: Clip.hardEdge,
+                  child: Image.asset('assets/images/userP.png'),
                 ),
                 SizedBox(
                   width: 16.w,
@@ -81,7 +84,8 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const PsychologistPersonalInfoScreen()));
+                    builder: (context) =>
+                        const PsychologistPersonalInfoScreen()));
               },
               child: Container(
                 color: Colors.transparent,
@@ -93,16 +97,16 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
                       style: kManRope_500_16_001314,
                     ),
                     GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) =>
-                              const PsychologistPersonalInfoScreen()));
-                        },
-                        child: SvgPicture.asset(
-                          'assets/icons/rightArrow.svg',
-                          height: 12,
-                          width: 6,
-                        ),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                const PsychologistPersonalInfoScreen()));
+                      },
+                      child: SvgPicture.asset(
+                        'assets/icons/rightArrow.svg',
+                        height: 12,
+                        width: 6,
+                      ),
                     ),
                   ],
                 ),
@@ -112,9 +116,7 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
               height: 30.h,
             ),
             GestureDetector(
-              onTap: () {
-
-              },
+              onTap: () {},
               child: Container(
                 color: Colors.transparent,
                 child: Row(
@@ -152,9 +154,7 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
                     style: kManRope_500_16_001314,
                   ),
                   GestureDetector(
-                    onTap: () {
-
-                    },
+                    onTap: () {},
                     child: SvgPicture.asset(
                       'assets/icons/rightArrow.svg',
                       height: 12,
@@ -180,9 +180,7 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
                     style: kManRope_500_16_001314,
                   ),
                   GestureDetector(
-                    onTap: () {
-
-                    },
+                    onTap: () {},
                     child: SvgPicture.asset(
                       'assets/icons/rightArrow.svg',
                       height: 12,

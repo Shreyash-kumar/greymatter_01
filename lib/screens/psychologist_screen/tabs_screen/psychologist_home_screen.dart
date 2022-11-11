@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/screens/psychologist_screen/home_screens/upcoming_meetings.dart';
+
 import '../../../constants/fonts.dart';
 import '../../../widgets/shared/buttons/custom_active_text_button.dart';
 import '../home_screens/canceled_meeting_screens.dart';
@@ -24,7 +25,7 @@ class _PsychologistHomeScreenState extends State<PsychologistHomeScreen> {
       backgroundColor: kWhiteBGColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
         title: Text(
@@ -186,13 +187,14 @@ class _PsychologistHomeScreenState extends State<PsychologistHomeScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => CanceledMeetingScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CanceledMeetingScreen()));
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        'Canceled',
+                        'Cancelled',
                         style: index == 1
                             ? kManRope_500_16_006D77
                             : kManRope_500_16_001314,
@@ -210,7 +212,8 @@ class _PsychologistHomeScreenState extends State<PsychologistHomeScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => CompletedMeetingScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CompletedMeetingScreen()));
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -234,93 +237,106 @@ class _PsychologistHomeScreenState extends State<PsychologistHomeScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 24.h,),
+            SizedBox(
+              height: 24.h,
+            ),
             flag
                 ? Column(
-                  children: [
-                    SizedBox(
-                      height: 340.h,
-                      width: 1.sw,
-                      child: ListView.separated(
-                          itemBuilder: (ctx, index) {
-                            return Container(
-                              height: 80.h,
-                              width: 1.sw,
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w, vertical: 10.h),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: kWhiteBGColor,
-                                  border: Border.all(color: Colors.white)
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Container(
-                                            width: 48.w,
-                                            height: 48.h,
-                                            decoration: BoxDecoration(
-                                                color: Colors.grey,
-                                                borderRadius:
-                                                    BorderRadius.circular(8)),
-                                          ),
-                                          SizedBox(width: 8.w),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text('Priyanka singh',
-                                                  style: kManRope_500_16_001314),
-                                              //SizedBox(width: 10,),
-                                              SizedBox(height: 8.h),
-                                              Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                children: [
-                                                  Text(
-                                                      'Anxiety',
-                                                      style:
-                                                          kManRope_400_14_626A6A),
-                                                  SizedBox(width: 110.w,),
-                                                  Text('10 June 2022, 8:00AM', style: kManRope_400_14_626A6A,),
-                                                ],
-                                              ),
-                                              SizedBox(height: 8.h),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                          separatorBuilder: (ctx, index) {
-                            return SizedBox(height: 12.h);
-                          },
-                          itemCount: 3),
-                    ),
-                    SizedBox(
-                      height: 56.h,
-                      width: 380.w,
-                      child: CustomActiveTextButton(
-                        text: 'See All',
-                        onPressed: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => UpcomingMeetings()));
-                        },
+                    children: [
+                      SizedBox(
+                        height: 340.h,
+                        width: 1.sw,
+                        child: ListView.separated(
+                            itemBuilder: (ctx, index) {
+                              return Container(
+                                height: 80.h,
+                                width: 1.sw,
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w, vertical: 10.h),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color: kWhiteBGColor,
+                                    border: Border.all(color: Colors.white)),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: 48.w,
+                                              height: 48.h,
+                                              clipBehavior: Clip.hardEdge,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.grey,
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              child: Image.asset(
+                                                  'assets/images/userP.png'),
+                                            ),
+                                            SizedBox(width: 8.w),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text('Priyanka singh',
+                                                    style:
+                                                        kManRope_500_16_001314),
+                                                //SizedBox(width: 10,),
+                                                SizedBox(height: 8.h),
+                                                SizedBox(
+                                                  width: 280.w,
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Text('Anxiety',
+                                                          style:
+                                                              kManRope_400_14_626A6A),
+                                                      Text(
+                                                        '10 June 2022, 8:00AM',
+                                                        style:
+                                                            kManRope_400_14_626A6A,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                SizedBox(height: 8.h),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                            separatorBuilder: (ctx, index) {
+                              return SizedBox(height: 12.h);
+                            },
+                            itemCount: 3),
                       ),
-                    )
-                  ],
-                )
+                      SizedBox(
+                        height: 56.h,
+                        width: 380.w,
+                        child: CustomActiveTextButton(
+                          text: 'See All',
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => UpcomingMeetings()));
+                          },
+                        ),
+                      )
+                    ],
+                  )
                 : Column(
                     children: [
                       SizedBox(
