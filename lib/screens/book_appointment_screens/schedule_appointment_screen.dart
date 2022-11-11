@@ -78,6 +78,7 @@ class _ScheduleAppointmentScreenState extends State<ScheduleAppointmentScreen> {
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'Appointment',
           style: kManRope_500_16_006D77,

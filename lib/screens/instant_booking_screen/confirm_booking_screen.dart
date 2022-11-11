@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:greymatter/screens/instant_booking_screen/booking_successful_screen.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -27,6 +28,7 @@ class _ConfirmBookingState extends State<ConfirmBooking> {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 10.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Confirm your booking',
@@ -71,10 +73,13 @@ class _ConfirmBookingState extends State<ConfirmBooking> {
                 ),
                 Row(
                   children: [
-                    Image.asset(
-                      'assets/images/profilePic.png',
-                      height: 64.h,
-                      width: 64.w,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        'assets/images/userP.png',
+                        height: 64.h,
+                        width: 64.w,
+                      ),
                     ),
                     SizedBox(
                       width: 18.w,
@@ -211,10 +216,10 @@ class _ConfirmBookingState extends State<ConfirmBooking> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 83.h,
         child: Padding(
-          padding: EdgeInsets.only(left: 24.w, right: 24.w),
+          padding: EdgeInsets.only(left: 24.w, right: 24.w, bottom: 24.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -225,8 +230,7 @@ class _ConfirmBookingState extends State<ConfirmBooking> {
               SizedBox(
                 height: 56.h,
                 width: 200,
-                child:
-                MaterialButton(
+                child: MaterialButton(
                   color: k006D77,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10), // <-- Radius

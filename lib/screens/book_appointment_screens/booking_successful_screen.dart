@@ -16,6 +16,7 @@ class BookingSuccessfulScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 10.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Appointment',

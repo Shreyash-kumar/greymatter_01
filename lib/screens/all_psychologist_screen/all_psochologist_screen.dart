@@ -19,6 +19,7 @@ class AllPsychologistScreen extends StatelessWidget {
         elevation: 0,
         leadingWidth: 10.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'Available Psychologists',
           style: kManRope_500_16_006D77,
@@ -61,9 +62,11 @@ class AllPsychologistScreen extends StatelessWidget {
                               Container(
                                 width: 85.w,
                                 height: 85.h,
+                                clipBehavior: Clip.hardEdge,
                                 decoration: BoxDecoration(
                                     color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(24)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Image.asset('assets/images/userP.png'),
                               ),
                               SizedBox(width: 8.w),
                               Column(
@@ -115,19 +118,21 @@ class AllPsychologistScreen extends StatelessWidget {
                                 child: SecondaryCardButton())),
                         SizedBox(width: 8.w),
                         Expanded(
-                            child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          ScheduleAppointmentScreen(
-                                        issue: 'issue',
-                                      ),
-                                    ),
-                                  );
-                                },
-                                child: PrimaryCardButton())),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      ScheduleAppointmentScreen(
+                                    issue: 'issue',
+                                  ),
+                                ),
+                              );
+                            },
+                            child: PrimaryCardButton(),
+                          ),
+                        ),
                       ],
                     ),
                   ],

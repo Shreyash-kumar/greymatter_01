@@ -17,6 +17,7 @@ class HelpAndSupportScreen extends StatelessWidget {
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'Help and support',
           style: kManRope_500_16_006D77,

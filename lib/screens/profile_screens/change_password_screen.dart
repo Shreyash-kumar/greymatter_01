@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -11,6 +12,7 @@ class ChangePasswordScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kWhiteBGColor,
       appBar: AppBar(
+        centerTitle: false,
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
@@ -48,7 +50,7 @@ class ChangePasswordScreen extends StatelessWidget {
               ),
               SizedBox(
                 width: 380.w,
-                 child: const TextField(
+                child: const TextField(
                   decoration: InputDecoration(
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: kB5BABA),
@@ -56,7 +58,9 @@ class ChangePasswordScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 40.h,),
+              SizedBox(
+                height: 40.h,
+              ),
               Text(
                 'Enter New password',
                 style: kManRope_400_14_626A6A,
@@ -74,7 +78,9 @@ class ChangePasswordScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 40.h,),
+              SizedBox(
+                height: 40.h,
+              ),
               Text(
                 'Confirm new password',
                 style: kManRope_400_14_626A6A,
@@ -92,7 +98,9 @@ class ChangePasswordScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 340.h,),
+              SizedBox(
+                height: 340.h,
+              ),
               Center(
                 child: SizedBox(
                   height: 60.h,
@@ -103,9 +111,7 @@ class ChangePasswordScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(48),
                       side: const BorderSide(color: k006D77),
                     ),
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Save',
                       style: kManRope_400_16_white,

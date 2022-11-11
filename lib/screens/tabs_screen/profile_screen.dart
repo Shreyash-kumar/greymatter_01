@@ -45,8 +45,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Container(
                   height: 55.h,
                   width: 55.w,
+                  clipBehavior: Clip.hardEdge,
                   decoration: const BoxDecoration(
-                      color: Colors.grey, shape: BoxShape.circle),
+                    color: Colors.grey,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.asset('assets/images/userP.png'),
                 ),
                 SizedBox(
                   width: 16.w,

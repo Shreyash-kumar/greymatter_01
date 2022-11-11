@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -14,6 +15,7 @@ class ChatSupportScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 40.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Chat support',
@@ -52,7 +54,9 @@ class ChatSupportScreen extends StatelessWidget {
               'Priyanka  11:45 Pm',
               style: kManRope_400_12_001314,
             ),
-            SizedBox(height: 8.h,),
+            SizedBox(
+              height: 8.h,
+            ),
             Container(
               height: 45.h,
               width: 60.w,
@@ -61,12 +65,22 @@ class ChatSupportScreen extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               child: Center(
-                child: Text('Hi', style: kManRope_400_14_626A6A,),
+                child: Text(
+                  'Hi',
+                  style: kManRope_400_14_626A6A,
+                ),
               ),
             ),
-            SizedBox(height: 4.h,),
-            Text('Seen', style: kManRope_400_12_006D77,),
-            SizedBox(height: 24.h,),
+            SizedBox(
+              height: 4.h,
+            ),
+            Text(
+              'Seen',
+              style: kManRope_400_12_006D77,
+            ),
+            SizedBox(
+              height: 24.h,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -77,7 +91,9 @@ class ChatSupportScreen extends StatelessWidget {
                       'Priyanka  11:45 Pm',
                       style: kManRope_400_12_001314,
                     ),
-                    SizedBox(height: 8.h,),
+                    SizedBox(
+                      height: 8.h,
+                    ),
                     Container(
                       height: 66.h,
                       width: 280.w,
@@ -87,12 +103,17 @@ class ChatSupportScreen extends StatelessWidget {
                       ),
                       child: Center(
                         child: Padding(
-                          padding:  EdgeInsets.only(left: 14.w),
-                          child: Text('Hi Priyanka my name is harish how can I help you?', style: kManRope_400_14_626A6A,),
+                          padding: EdgeInsets.only(left: 14.w),
+                          child: Text(
+                            'Hi Priyanka my name is harish how can I help you?',
+                            style: kManRope_400_14_626A6A,
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(height: 4.h,),
+                    SizedBox(
+                      height: 4.h,
+                    ),
                   ],
                 ),
               ],
@@ -112,9 +133,9 @@ class ChatSupportScreen extends StatelessWidget {
               color: Colors.white,
             ),
             child: Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 18.w),
+              padding: EdgeInsets.symmetric(horizontal: 18.w),
               child: Row(
-                children:  [
+                children: [
                   const SizedBox(
                     width: 215,
                     child: TextField(
@@ -125,9 +146,21 @@ class ChatSupportScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      SvgPicture.asset('assets/icons/camera.svg', height: 36.h, width: 26.w,),
-                      SvgPicture.asset('assets/icons/paperClip.svg', height: 36.h, width: 26.w,),
-                      SvgPicture.asset('assets/icons/send.svg', height: 36.h, width: 26.w,),
+                      SvgPicture.asset(
+                        'assets/icons/camera.svg',
+                        height: 36.h,
+                        width: 26.w,
+                      ),
+                      SvgPicture.asset(
+                        'assets/icons/paperClip.svg',
+                        height: 36.h,
+                        width: 26.w,
+                      ),
+                      SvgPicture.asset(
+                        'assets/icons/send.svg',
+                        height: 36.h,
+                        width: 26.w,
+                      ),
                     ],
                   )
                 ],

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -123,6 +124,7 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 40.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Account',
@@ -220,7 +222,6 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
                             ),
                           ),
                           child: CupertinoDatePicker(
-
                             initialDateTime: date,
                             mode: CupertinoDatePickerMode.date,
                             use24hFormat: true,
@@ -778,16 +779,16 @@ class _OccupationBottomSheetState extends State<OccupationBottomSheet> {
                         width: 78.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                          const BorderRadius.all(Radius.circular(5)),
+                              const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 0 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                              'Student',
-                              style: _gIndex == 0
-                                  ? kManRope_500_16_white
-                                  : kManRope_500_16_626A6A,
-                            )),
+                          'Student',
+                          style: _gIndex == 0
+                              ? kManRope_500_16_white
+                              : kManRope_500_16_626A6A,
+                        )),
                       ),
                     ),
                     GestureDetector(
@@ -799,16 +800,16 @@ class _OccupationBottomSheetState extends State<OccupationBottomSheet> {
                         width: 78.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                          const BorderRadius.all(Radius.circular(5)),
+                              const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 1 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                              'Working',
-                              style: _gIndex == 1
-                                  ? kManRope_500_16_white
-                                  : kManRope_500_16_626A6A,
-                            )),
+                          'Working',
+                          style: _gIndex == 1
+                              ? kManRope_500_16_white
+                              : kManRope_500_16_626A6A,
+                        )),
                       ),
                     ),
                     GestureDetector(
@@ -820,16 +821,16 @@ class _OccupationBottomSheetState extends State<OccupationBottomSheet> {
                         width: 78.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                          const BorderRadius.all(Radius.circular(5)),
+                              const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 2 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                              'Others',
-                              style: _gIndex == 2
-                                  ? kManRope_500_16_white
-                                  : kManRope_500_16_626A6A,
-                            )),
+                          'Others',
+                          style: _gIndex == 2
+                              ? kManRope_500_16_white
+                              : kManRope_500_16_626A6A,
+                        )),
                       ),
                     ),
                   ],
@@ -849,4 +850,3 @@ class _OccupationBottomSheetState extends State<OccupationBottomSheet> {
     );
   }
 }
-

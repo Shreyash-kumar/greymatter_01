@@ -14,6 +14,7 @@ class NewActivityAddedScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 40.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Add new activity',
@@ -38,9 +39,18 @@ class NewActivityAddedScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/check-circle.png', height: 108.h, width: 108.w,),
-            SizedBox(height: 8.h,),
-            Text('New activity added', style: kManRope_400_14_001314,),
+            Image.asset(
+              'assets/images/check-circle.png',
+              height: 108.h,
+              width: 108.w,
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            Text(
+              'New activity added',
+              style: kManRope_400_14_001314,
+            ),
           ],
         ),
       ),

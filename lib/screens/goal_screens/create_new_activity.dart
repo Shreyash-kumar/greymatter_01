@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greymatter/constants/Lists.dart';
 import 'package:greymatter/screens/goal_screens/new_activity_added_screen.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -14,7 +15,7 @@ class CreateNewActivity extends StatefulWidget {
 }
 
 class _CreateNewActivityState extends State<CreateNewActivity> {
-  bool _switchValue=true;
+  bool _switchValue = true;
   bool goalFlag = true;
   int flag = 0;
   @override
@@ -25,6 +26,7 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'Add new activity',
           style: kManRope_500_16_006D77,
@@ -53,7 +55,10 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Activity Name', style: kManRope_500_16_001314,),
+                  Text(
+                    'Activity Name',
+                    style: kManRope_500_16_001314,
+                  ),
                   Container(
                     height: 39.w,
                     width: 138.h,
@@ -83,7 +88,7 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                   Row(
                     children: [
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             goalFlag = true;
                           });
@@ -94,10 +99,15 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                             border: Border.all(color: k006D77),
-                            color: goalFlag? k006D77: Colors.white,
+                            color: goalFlag ? k006D77 : Colors.white,
                           ),
                           child: Center(
-                            child: Text('One time', style: goalFlag?kManRope_400_14_white:kManRope_400_14_001314,),
+                            child: Text(
+                              'One time',
+                              style: goalFlag
+                                  ? kManRope_400_14_white
+                                  : kManRope_400_14_001314,
+                            ),
                           ),
                         ),
                       ),
@@ -105,7 +115,7 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                         width: 8.w,
                       ),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             goalFlag = false;
                           });
@@ -116,10 +126,15 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                             border: Border.all(color: k006D77),
-                            color: goalFlag? Colors.white:k006D77 ,
+                            color: goalFlag ? Colors.white : k006D77,
                           ),
                           child: Center(
-                            child: Text('Repeat', style: goalFlag?kManRope_400_14_001314:kManRope_400_14_white,),
+                            child: Text(
+                              'Repeat',
+                              style: goalFlag
+                                  ? kManRope_400_14_001314
+                                  : kManRope_400_14_white,
+                            ),
                           ),
                         ),
                       ),
@@ -140,7 +155,7 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                   Row(
                     children: [
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             flag = 0;
                           });
@@ -151,10 +166,15 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                             border: Border.all(color: k006D77),
-                            color: flag == 0? k006D77:Colors.white,
+                            color: flag == 0 ? k006D77 : Colors.white,
                           ),
                           child: Center(
-                            child: Text('Daily', style:flag == 0? kManRope_400_14_white:kManRope_400_14_001314,),
+                            child: Text(
+                              'Daily',
+                              style: flag == 0
+                                  ? kManRope_400_14_white
+                                  : kManRope_400_14_001314,
+                            ),
                           ),
                         ),
                       ),
@@ -162,7 +182,7 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                         width: 8.w,
                       ),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             flag = 1;
                           });
@@ -173,10 +193,15 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                             border: Border.all(color: k006D77),
-                            color: flag == 1? k006D77: Colors.white,
+                            color: flag == 1 ? k006D77 : Colors.white,
                           ),
                           child: Center(
-                            child: Text('Mon-sat', style: flag == 1? kManRope_400_14_white:kManRope_400_14_001314,),
+                            child: Text(
+                              'Mon-sat',
+                              style: flag == 1
+                                  ? kManRope_400_14_white
+                                  : kManRope_400_14_001314,
+                            ),
                           ),
                         ),
                       ),
@@ -184,7 +209,7 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                         width: 8.w,
                       ),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             flag = 2;
                           });
@@ -195,10 +220,15 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                             border: Border.all(color: k006D77),
-                            color: flag == 2? k006D77 : Colors.white,
+                            color: flag == 2 ? k006D77 : Colors.white,
                           ),
                           child: Center(
-                            child: Text('Custom', style: flag == 2? kManRope_400_14_white: kManRope_400_14_001314,),
+                            child: Text(
+                              'Custom',
+                              style: flag == 2
+                                  ? kManRope_400_14_white
+                                  : kManRope_400_14_001314,
+                            ),
                           ),
                         ),
                       ),
@@ -213,7 +243,9 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                 'Select Days',
                 style: kManRope_500_16_001314,
               ),
-              SizedBox(height: 24.h,),
+              SizedBox(
+                height: 24.h,
+              ),
               Container(
                 height: 39.w,
                 child: ListView.builder(
@@ -222,27 +254,36 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
-                      padding:  EdgeInsets.only(right: 6.w),
+                      padding: EdgeInsets.only(right: 6.w),
                       child: Container(
                         height: 39.h,
                         width: 49.w,
                         decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(Radius.circular(5)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5)),
                           border: Border.all(color: k006D77),
                         ),
                         child: Center(
-                          child: Text(weekDays[index], style: kManRope_400_14_001314,),
+                          child: Text(
+                            weekDays[index],
+                            style: kManRope_400_14_001314,
+                          ),
                         ),
                       ),
                     );
                   },
                 ),
               ),
-              SizedBox(height: 39.h,),
+              SizedBox(
+                height: 39.h,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Reminder', style: kManRope_500_16_001314,),
+                  Text(
+                    'Reminder',
+                    style: kManRope_500_16_001314,
+                  ),
                   SizedBox(
                     height: 28.h,
                     width: 54.w,
@@ -261,29 +302,44 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                   ),
                 ],
               ),
-              SizedBox(height: 39.h,),
+              SizedBox(
+                height: 39.h,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Reminder time', style: kManRope_500_16_001314,),
-                  Text('06:00 am', style: kManRope_400_14_001314,)
+                  Text(
+                    'Reminder time',
+                    style: kManRope_500_16_001314,
+                  ),
+                  Text(
+                    '06:00 am',
+                    style: kManRope_400_14_001314,
+                  )
                 ],
               ),
-              SizedBox(height: 180.h,),
+              SizedBox(
+                height: 180.h,
+              ),
               Center(
                 child: SizedBox(
                   height: 56,
                   width: 132.w,
-                  child:  MaterialButton(
+                  child: MaterialButton(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NewActivityAddedScreen()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              const NewActivityAddedScreen()));
                     },
                     color: k006D77,
                     child: Center(
-                      child: Text('ADD', style: kManRope_600_16_white,),
+                      child: Text(
+                        'ADD',
+                        style: kManRope_600_16_white,
+                      ),
                     ),
                   ),
                 ),

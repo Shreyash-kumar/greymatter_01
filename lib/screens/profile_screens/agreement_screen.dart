@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:greymatter/screens/profile_screens/agreement_details_screen.dart';
 import 'package:greymatter/screens/profile_screens/privacy_and_policy_screen.dart';
 import 'package:greymatter/screens/profile_screens/terms_and_conditions_screen.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -15,6 +16,7 @@ class AgreementScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kWhiteBGColor,
       appBar: AppBar(
+        centerTitle: false,
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
@@ -73,7 +75,8 @@ class AgreementScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PrivacyAndPolicyScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const PrivacyAndPolicyScreen()));
                   },
                   child: SvgPicture.asset(
                     'assets/icons/rightArrow.svg',
@@ -94,8 +97,10 @@ class AgreementScreen extends StatelessWidget {
                   style: kManRope_500_16_001314,
                 ),
                 GestureDetector(
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TermsAndConditionsScreen()));
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) =>
+                            const TermsAndConditionsScreen()));
                   },
                   child: SvgPicture.asset(
                     'assets/icons/rightArrow.svg',

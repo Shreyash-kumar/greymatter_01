@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greymatter/screens/profile_screens/reset_email_otp_screen.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -15,6 +16,7 @@ class ChangeEmailScreen extends StatelessWidget {
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'Change Email',
           style: kManRope_500_16_006D77,
@@ -66,27 +68,39 @@ class ChangeEmailScreen extends StatelessWidget {
               style: kManRope_400_16_626A6A,
             ),
             SizedBox(width: 380.w, child: TextField()),
-            SizedBox(height: 190.h,),
-            Center(
-              child:
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('You will reacive an otp to your new email', style: kManRope_400_16_626A6A,),
-                    Text('after clicking next', style: kManRope_400_16_626A6A,),
-                  ],
-                ),
+            SizedBox(
+              height: 190.h,
             ),
-            SizedBox(height: 134.h,),
+            Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'You will reacive an otp to your new email',
+                    style: kManRope_400_16_626A6A,
+                  ),
+                  Text(
+                    'after clicking next',
+                    style: kManRope_400_16_626A6A,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 134.h,
+            ),
             Center(
               child: MaterialButton(
                 color: k006D77,
+                height: 60,
+                minWidth: 168,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(48),
                   side: const BorderSide(color: k006D77),
                 ),
                 onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ResetEmailOTPScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ResetEmailOTPScreen()));
                 },
                 child: Text(
                   'Next',

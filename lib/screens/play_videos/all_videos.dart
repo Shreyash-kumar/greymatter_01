@@ -23,6 +23,7 @@ class _AllVideosState extends State<AllVideos> {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 10.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'All videos',
@@ -94,31 +95,32 @@ class _AllVideosState extends State<AllVideos> {
               height: 24.h,
             ),
             SizedBox(
-              height: 210.h,
-              child: GridView.builder(
+              height: 230.h,
+              child: ListView.builder(
                 padding: EdgeInsets.zero,
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: 4,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
-                  crossAxisSpacing: 0,
-                  mainAxisSpacing: 0,
-                  childAspectRatio: 1.05,
-                ),
                 itemBuilder: (BuildContext context, int index) {
-                  return SizedBox(
-                    height: 200.h,
+                  return Container(
+                    margin: EdgeInsets.only(left: 16),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          height: 182.h,
+                          height: 182.w,
                           width: 182.w,
+                          clipBehavior: Clip.hardEdge,
                           decoration: const BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
+                          child: Image.asset(
+                            'assets/images/post.png',
+                            fit: BoxFit.fill,
+                          ),
                         ),
+                        SizedBox(height: 16),
                         Text(
                           'Name xyz',
                           style: kManRope_500_16_001314,
@@ -167,31 +169,31 @@ class _AllVideosState extends State<AllVideos> {
               height: 24.h,
             ),
             SizedBox(
-              height: 210.h,
-              child: GridView.builder(
-                padding: EdgeInsets.zero,
+              height: 230.h,
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: 4,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
-                  crossAxisSpacing: 0,
-                  mainAxisSpacing: 0,
-                  childAspectRatio: 1.05,
-                ),
                 itemBuilder: (BuildContext context, int index) {
-                  return SizedBox(
-                    height: 200.h,
+                  return Container(
+                    margin: EdgeInsets.only(left: 16),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          height: 182.h,
+                          height: 182.w,
                           width: 182.w,
+                          clipBehavior: Clip.hardEdge,
                           decoration: const BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
+                          child: Image.asset(
+                            'assets/images/post.png',
+                            fit: BoxFit.fill,
+                          ),
                         ),
+                        SizedBox(height: 16),
                         Text(
                           'Name xyz',
                           style: kManRope_500_16_001314,
@@ -240,31 +242,31 @@ class _AllVideosState extends State<AllVideos> {
               height: 24.h,
             ),
             SizedBox(
-              height: 210.h,
-              child: GridView.builder(
-                padding: EdgeInsets.zero,
+              height: 230.h,
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: 4,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
-                  crossAxisSpacing: 0,
-                  mainAxisSpacing: 0,
-                  childAspectRatio: 1.05,
-                ),
                 itemBuilder: (BuildContext context, int index) {
-                  return SizedBox(
-                    height: 200.h,
+                  return Container(
+                    margin: EdgeInsets.only(left: 16),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          height: 182.h,
+                          height: 182.w,
                           width: 182.w,
+                          clipBehavior: Clip.hardEdge,
                           decoration: const BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
+                          child: Image.asset(
+                            'assets/images/post.png',
+                            fit: BoxFit.fill,
+                          ),
                         ),
+                        SizedBox(height: 16),
                         Text(
                           'Name xyz',
                           style: kManRope_500_16_001314,

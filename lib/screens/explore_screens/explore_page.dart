@@ -38,10 +38,14 @@ class _ExplorePageState extends State<ExplorePage> {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const FilterScreen()));
                   },
-                  child: SvgPicture.asset(
-                    'assets/icons/filter.svg',
-                    height: 20.h,
-                    width: 18.w,
+                  child: Container(
+                    color: Colors.transparent,
+                    padding: const EdgeInsets.all(10.0),
+                    child: SvgPicture.asset(
+                      'assets/icons/filter.svg',
+                      height: 20.h,
+                      width: 18.w,
+                    ),
                   ),
                 ),
               ],
@@ -75,10 +79,12 @@ class _ExplorePageState extends State<ExplorePage> {
                                     Container(
                                       width: 85.w,
                                       height: 85.h,
+                                      clipBehavior: Clip.hardEdge,
                                       decoration: BoxDecoration(
-                                          color: Colors.grey,
                                           borderRadius:
-                                              BorderRadius.circular(24)),
+                                              BorderRadius.circular(10)),
+                                      child: Image.asset(
+                                          'assets/images/userP.png'),
                                     ),
                                     SizedBox(width: 8.w),
                                     Column(

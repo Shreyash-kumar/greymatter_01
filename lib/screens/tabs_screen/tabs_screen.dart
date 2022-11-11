@@ -56,15 +56,12 @@ class _TabsScreenState extends State<TabsScreen> {
                   height: 48.h,
                   decoration: BoxDecoration(
                       color: _index == 0
-                          ? k5A72ED.withOpacity(0.08)
+                          ? k006D77.withOpacity(0.08)
                           : Colors.transparent,
                       borderRadius: BorderRadius.circular(16)),
-                  child: SvgPicture.asset(
-                    _index == 0
-                        ? 'assets/icons/homeselected.svg'
-                        : 'assets/icons/home.svg',
-                    color: _index == 0 ? k5A72ED : Colors.black,
-                  ),
+                  child: _index == 0
+                      ? Image.asset('assets/images/logoT.png')
+                      : Image.asset('assets/images/logoF.png'),
                 ),
               ),
               InkWell(

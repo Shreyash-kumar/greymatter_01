@@ -18,6 +18,7 @@ class BookAppointmentScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 40.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Book Appointment',

@@ -15,6 +15,7 @@ class FAQsScreen extends StatelessWidget {
       backgroundColor: kWhiteBGColor,
       appBar: AppBar(
         elevation: 0,
+        centerTitle: false,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
         title: Text(

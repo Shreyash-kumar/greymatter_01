@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:greymatter/screens/posts_screens/create_post_screen.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
-import '../psychologist_screen/post_screen/psychologist_create_post.dart';
 
 class PostPage extends StatelessWidget {
   const PostPage({Key? key}) : super(key: key);
@@ -23,11 +24,9 @@ class PostPage extends StatelessWidget {
                   shrinkWrap: true,
                   itemBuilder: (ctx, index) {
                     return Container(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 20.w, vertical: 24.h),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(24),
-                        color: Colors.white,
+                        color: Colors.transparent,
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -42,11 +41,13 @@ class PostPage extends StatelessWidget {
                                   children: [
                                     Container(
                                       width: 45.w,
-                                      height: 45.h,
+                                      height: 45.w,
+                                      clipBehavior: Clip.hardEdge,
                                       decoration: BoxDecoration(
                                           color: Colors.grey,
-                                          borderRadius:
-                                              BorderRadius.circular(24)),
+                                          shape: BoxShape.circle),
+                                      child: Image.asset(
+                                          'assets/images/userP.png'),
                                     ),
                                     SizedBox(width: 8.w),
                                     Column(
@@ -80,6 +81,10 @@ class PostPage extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                               color: Colors.grey,
+                            ),
+                            child: Image.asset(
+                              'assets/images/post.png',
+                              fit: BoxFit.fill,
                             ),
                           ),
                           SizedBox(
@@ -142,7 +147,7 @@ class PostPage extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const PsychologistCreatePostScreen()));
+                    builder: (context) => const CreatePostScreen()));
               },
               child: SvgPicture.asset(
                 'assets/icons/addPost_1.svg',

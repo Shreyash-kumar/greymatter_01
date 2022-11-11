@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greymatter/screens/book_appointment_screens/psychologists_profile_screen.dart';
 import 'package:greymatter/screens/book_appointment_screens/schedule_appointment_screen.dart';
-import '../../constants/colors.dart';
-import '../../constants/fonts.dart';
 import 'package:greymatter/widgets/shared/buttons/card_buttons/primary_card_button.dart';
 import 'package:greymatter/widgets/shared/buttons/card_buttons/secondary_card_button.dart';
+
+import '../../constants/colors.dart';
+import '../../constants/fonts.dart';
 
 class AvailablePsychologists extends StatelessWidget {
   const AvailablePsychologists({Key? key, required this.issue})
@@ -19,6 +20,7 @@ class AvailablePsychologists extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 40.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Available Psychologists',
@@ -109,14 +111,22 @@ class AvailablePsychologists extends StatelessWidget {
                         Expanded(
                             child: GestureDetector(
                                 onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PsychologistProfile()));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PsychologistProfile()));
                                 },
                                 child: const SecondaryCardButton())),
                         SizedBox(width: 8.w),
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
-                               Navigator.push(context, MaterialPageRoute(builder: (context) =>  ScheduleAppointmentScreen(issue: issue,)));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ScheduleAppointmentScreen(
+                                            issue: issue,
+                                          )));
                             },
                             child: const PrimaryCardButton(),
                           ),

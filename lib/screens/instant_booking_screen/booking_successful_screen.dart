@@ -52,6 +52,7 @@ class _BookingSuccessfulState extends State<BookingSuccessful> {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 10.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Confirm your booking',
@@ -120,10 +121,13 @@ class _BookingSuccessfulState extends State<BookingSuccessful> {
             ),
             Row(
               children: [
-                Image.asset(
-                  'assets/images/profilePic.png',
-                  height: 64.h,
-                  width: 64.w,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    'assets/images/userP.png',
+                    height: 64.h,
+                    width: 64.w,
+                  ),
                 ),
                 SizedBox(
                   width: 18.w,

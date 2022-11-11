@@ -33,12 +33,17 @@ class PsychologistProfile extends StatelessWidget {
         child: Stack(
           children: [
             Container(
+              clipBehavior: Clip.hardEdge,
               decoration: const BoxDecoration(
                 color: Colors.grey,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(28.0),
                   topRight: Radius.circular(28.0),
                 ),
+              ),
+              child: Image.asset(
+                'assets/images/userP.png',
+                fit: BoxFit.fill,
               ),
               height: 276.h,
               width: 428.w,
@@ -241,33 +246,102 @@ class PsychologistProfile extends StatelessWidget {
                     SizedBox(
                       height: 24.h,
                     ),
-                    Text(
-                      'Monday                                                                   10:00 AM  08:00 PM',
-                      style: kManRope_400_16_006D77,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Monday',
+                          style: kManRope_400_16_006D77,
+                        ),
+                        Text(
+                          '10:00 AM  08:00 PM',
+                          style: kManRope_400_16_006D77,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'Tuesday                                                                  10:00 AM  08:00 PM',
-                      style: kManRope_400_16_006D77,
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Tues',
+                          style: kManRope_400_16_006D77,
+                        ),
+                        Text(
+                          '10:00 AM  08:00 PM',
+                          style: kManRope_400_16_006D77,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'Wednesday                                                           10:00 AM  08:00 PM',
-                      style: kManRope_400_16_006D77,
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Wednesday',
+                          style: kManRope_400_16_006D77,
+                        ),
+                        Text(
+                          '10:00 AM  08:00 PM',
+                          style: kManRope_400_16_006D77,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'Thursday                                                                 10:00 AM  08:00 PM',
-                      style: kManRope_400_16_006D77,
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Thursday',
+                          style: kManRope_400_16_006D77,
+                        ),
+                        Text(
+                          '10:00 AM  08:00 PM',
+                          style: kManRope_400_16_006D77,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'Friday                                                                         10:00 AM  08:00 PM',
-                      style: kManRope_400_16_006D77,
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Friday',
+                          style: kManRope_400_16_006D77,
+                        ),
+                        Text(
+                          '10:00 AM  08:00 PM',
+                          style: kManRope_400_16_006D77,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'Saturday                                                                  10:00 AM  08:00 PM',
-                      style: kManRope_400_16_006D77,
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Saturday',
+                          style: kManRope_400_16_006D77,
+                        ),
+                        Text(
+                          '10:00 AM  08:00 PM',
+                          style: kManRope_400_16_006D77,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'Sunday                                                                     10:00 AM  08:00 PM',
-                      style: kManRope_400_16_006D77,
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Sunday',
+                          style: kManRope_400_16_006D77,
+                        ),
+                        Text(
+                          '10:00 AM  08:00 PM',
+                          style: kManRope_400_16_006D77,
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -279,7 +353,7 @@ class PsychologistProfile extends StatelessWidget {
       bottomNavigationBar: Container(
         height: 83.h,
         child: Padding(
-          padding: EdgeInsets.only(left: 24.w, right: 24.w),
+          padding: EdgeInsets.only(left: 24.w, right: 24.w, bottom: 24.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

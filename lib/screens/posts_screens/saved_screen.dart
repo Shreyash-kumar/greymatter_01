@@ -19,10 +19,9 @@ class SavedScreen extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (ctx, index) {
               return Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
-                  color: Colors.white,
+                  color: Colors.transparent,
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -38,9 +37,11 @@ class SavedScreen extends StatelessWidget {
                               Container(
                                 width: 45.w,
                                 height: 45.h,
+                                clipBehavior: Clip.hardEdge,
                                 decoration: BoxDecoration(
                                     color: Colors.grey,
                                     borderRadius: BorderRadius.circular(24)),
+                                child: Image.asset('assets/images/userP.png'),
                               ),
                               SizedBox(width: 8.w),
                               Column(
@@ -72,6 +73,10 @@ class SavedScreen extends StatelessWidget {
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Colors.grey,
+                      ),
+                      child: Image.asset(
+                        'assets/images/post.png',
+                        fit: BoxFit.fill,
                       ),
                     ),
                     SizedBox(

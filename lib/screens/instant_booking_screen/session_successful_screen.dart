@@ -20,6 +20,7 @@ class _SessionSuccessfulState extends State<SessionSuccessful> {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 40.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         titleSpacing: 18.w,
         leading: InkWell(
@@ -44,29 +45,20 @@ class _SessionSuccessfulState extends State<SessionSuccessful> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 28.h,
-                ),
                 Text(
                   'Session successful',
                   style: kManRope_500_16_001314,
                 ),
-                SizedBox(
-                  height: 24.h,
-                ),
                 Image.asset(
                   'assets/images/success.gif',
-                  height: 200.h,
-                  width: 200.w,
-                ),
-                SizedBox(
-                  height: 46.h,
+                  height: 150.h,
+                  width: 150.w,
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Image.asset(
-                      'assets/images/profilePic.png',
+                      'assets/images/userP.png',
                       height: 64.h,
                       width: 64.w,
                     ),

@@ -33,6 +33,7 @@ class _ConfirmAppointmentBookingState extends State<ConfirmAppointmentBooking> {
         elevation: 0,
         leadingWidth: 10.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'Confirm your booking',
           style: kManRope_500_16_006D77,
@@ -65,10 +66,13 @@ class _ConfirmAppointmentBookingState extends State<ConfirmAppointmentBooking> {
                 ),
                 Row(
                   children: [
-                    Image.asset(
-                      'assets/images/profilePic.png',
-                      height: 135.h,
-                      width: 133.w,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        'assets/images/userP.png',
+                        height: 135.h,
+                        width: 133.w,
+                      ),
                     ),
                     SizedBox(
                       width: 18.w,

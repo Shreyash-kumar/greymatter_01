@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -12,6 +13,7 @@ class CreatePostScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kWhiteBGColor,
       appBar: AppBar(
+        centerTitle: false,
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
@@ -42,12 +44,14 @@ class CreatePostScreen extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  height: 45.h,
+                  height: 45.w,
                   width: 45.w,
+                  clipBehavior: Clip.hardEdge,
                   decoration: const BoxDecoration(
                     color: Colors.grey,
                     shape: BoxShape.circle,
                   ),
+                  child: Image.asset('assets/images/userP.png'),
                 ),
                 SizedBox(
                   width: 8.w,
@@ -152,7 +156,7 @@ class CreatePostScreen extends StatelessWidget {
               child: SizedBox(
                 width: 200,
                 child: Padding(
-                  padding:  EdgeInsets.only(left: 20.w),
+                  padding: EdgeInsets.only(left: 20.w),
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -163,20 +167,19 @@ class CreatePostScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 280.h,),
+            SizedBox(
+              height: 280.h,
+            ),
             Center(
               child: SizedBox(
                 height: 56.h,
                 width: 182,
-                child:
-                MaterialButton(
+                child: MaterialButton(
                   color: k006D77,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10), // <-- Radius
                   ),
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   child: Text(
                     'Post',
                     style: kManRope_400_16_white,

@@ -18,6 +18,7 @@ class SessionDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 40.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         leading: InkWell(
           onTap: () {
@@ -44,10 +45,12 @@ class SessionDetailsScreen extends StatelessWidget {
                   Container(
                     height: 64.h,
                     width: 64.w,
+                    clipBehavior: Clip.hardEdge,
                     decoration: const BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
+                    child: Image.asset('assets/images/userP.png'),
                   ),
                   SizedBox(
                     width: 18.w,

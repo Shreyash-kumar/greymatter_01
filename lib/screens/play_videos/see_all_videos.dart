@@ -15,6 +15,7 @@ class SeeAllVideos extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 10.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'All videos',
@@ -49,7 +50,7 @@ class SeeAllVideos extends StatelessWidget {
                 fillColor: Colors.white,
                 filled: true,
                 suffixIconConstraints:
-                BoxConstraints(maxHeight: 48.h, maxWidth: 48.w),
+                    BoxConstraints(maxHeight: 48.h, maxWidth: 48.w),
                 suffixIcon: Padding(
                   padding: EdgeInsets.only(right: 16.w),
                   child: SvgPicture.asset('assets/icons/search.svg'),
@@ -66,24 +67,31 @@ class SeeAllVideos extends StatelessWidget {
                 physics: ScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 12,
-                gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 56.h,
-                ),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 25.h,
+                    childAspectRatio: 0.95),
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 170.h,
+                        height: 160.h,
                         child: Container(
                           height: 182.h,
                           width: 182.w,
+                          clipBehavior: Clip.hardEdge,
                           decoration: const BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
+                          child: Image.asset(
+                            'assets/images/post.png',
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
+                      SizedBox(height: 16),
                       Text(
                         'Name xyz',
                         style: kManRope_500_16_001314,

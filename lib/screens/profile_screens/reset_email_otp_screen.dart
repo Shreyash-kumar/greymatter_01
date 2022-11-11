@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/constants/fonts.dart';
-import 'package:greymatter/widgets/shared/buttons/custom_active_text_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class ResetEmailOTPScreen extends StatefulWidget {
@@ -16,16 +15,13 @@ class ResetEmailOTPScreen extends StatefulWidget {
 class _ResetPasswordOTPScreen extends State<ResetEmailOTPScreen> {
   String otp = '';
 
-
-
-
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: kWhiteBGColor,
-        body: Container(
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: kWhiteBGColor,
+      body: SafeArea(
+        child: Container(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +39,8 @@ class _ResetPasswordOTPScreen extends State<ResetEmailOTPScreen> {
               SizedBox(height: 40.h),
               Text('Enter OTP', style: kManRope_700_20_001314),
               SizedBox(height: 8.h),
-              Text('an OTP has been sent to XYZ@gmial.com', style: kManRope_400_14_626A6A),
+              Text('an OTP has been sent to XYZ@gmial.com',
+                  style: kManRope_400_14_626A6A),
               SizedBox(height: 16.h),
               SizedBox(height: 40.h),
               PinCodeTextField(
@@ -73,11 +70,21 @@ class _ResetPasswordOTPScreen extends State<ResetEmailOTPScreen> {
               SizedBox(height: 20.h),
               const Spacer(),
               Center(
-                child: SizedBox(
-                  height: 60.h,
-                    width: 168.w,
-                    child: CustomActiveTextButton(onPressed: (){}, text: 'Start')),
-              )
+                child: MaterialButton(
+                  color: k006D77,
+                  height: 60,
+                  minWidth: 168,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(48),
+                    side: const BorderSide(color: k006D77),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    'Save',
+                    style: kManRope_400_16_white,
+                  ),
+                ),
+              ),
             ],
           ),
         ),

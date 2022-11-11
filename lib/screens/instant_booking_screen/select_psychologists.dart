@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greymatter/screens/instant_booking_screen/confirm_booking_screen.dart';
-import '../../constants/colors.dart';
-import '../../constants/fonts.dart';
 import 'package:greymatter/widgets/shared/buttons/card_buttons/primary_card_button.dart';
 import 'package:greymatter/widgets/shared/buttons/card_buttons/secondary_card_button.dart';
+
+import '../../constants/colors.dart';
+import '../../constants/fonts.dart';
 
 class SelectAvailablePsychologists extends StatelessWidget {
   const SelectAvailablePsychologists({Key? key, required this.issue})
@@ -18,6 +19,7 @@ class SelectAvailablePsychologists extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 10.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Available Psychologists',
@@ -61,9 +63,11 @@ class SelectAvailablePsychologists extends StatelessWidget {
                               Container(
                                 width: 85.w,
                                 height: 85.h,
+                                clipBehavior: Clip.hardEdge,
                                 decoration: BoxDecoration(
                                     color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(24)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Image.asset('assets/images/userP.png'),
                               ),
                               SizedBox(width: 8.w),
                               Column(
@@ -110,7 +114,12 @@ class SelectAvailablePsychologists extends StatelessWidget {
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmBooking(issue: issue,)));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ConfirmBooking(
+                                            issue: issue,
+                                          )));
                             },
                             child: const PrimaryCardButton(),
                           ),

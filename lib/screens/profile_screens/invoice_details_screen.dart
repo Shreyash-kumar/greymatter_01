@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
-
 
 class InvoiceDetails extends StatelessWidget {
   const InvoiceDetails({Key? key}) : super(key: key);
@@ -15,6 +15,7 @@ class InvoiceDetails extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leadingWidth: 40.w,
+        centerTitle: false,
         backgroundColor: Colors.white,
         title: Text(
           'Invoice details',
@@ -36,7 +37,8 @@ class InvoiceDetails extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 40.h, bottom: 40.h),
+        padding:
+            EdgeInsets.only(left: 24.w, right: 24.w, top: 40.h, bottom: 40.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -232,34 +234,34 @@ class InvoiceDetails extends StatelessWidget {
               height: 40.h,
             ),
             SizedBox(
-                height: 56.h,
-                width: 380.w,
-                child: MaterialButton(
-                  color: k006D77,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    side: const BorderSide(color: k006D77),
-                  ),
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/download.svg',
-                        width: 18.w,
-                        height: 18.h,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 8.w,
-                      ),
-                      Text(
-                        'Download Invoice',
-                        style: kManRope_400_16_white,
-                      ),
-                    ],
-                  ),
+              height: 56.h,
+              width: 380.w,
+              child: MaterialButton(
+                color: k006D77,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: const BorderSide(color: k006D77),
                 ),
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/icons/download.svg',
+                      width: 18.w,
+                      height: 18.h,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 8.w,
+                    ),
+                    Text(
+                      'Download Invoice',
+                      style: kManRope_400_16_white,
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),

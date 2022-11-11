@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:greymatter/screens/profile_screens/change_email_screen.dart';
 import 'package:greymatter/screens/profile_screens/change_password_screen.dart';
 import 'package:greymatter/screens/profile_screens/delete_account_screen.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -18,6 +19,7 @@ class MyAccount extends StatelessWidget {
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'My Account',
           style: kManRope_500_16_006D77,
@@ -50,14 +52,15 @@ class MyAccount extends StatelessWidget {
                   style: kManRope_500_16_001314,
                 ),
                 GestureDetector(
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeEmailScreen()));
-                  },
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const ChangeEmailScreen()));
+                    },
                     child: SvgPicture.asset(
-                  'assets/icons/downArrow.svg',
-                  height: 24.h,
-                  width: 24.w,
-                )),
+                      'assets/icons/downArrow.svg',
+                      height: 24.h,
+                      width: 24.w,
+                    )),
               ],
             ),
             SizedBox(
@@ -71,8 +74,9 @@ class MyAccount extends StatelessWidget {
                   style: kManRope_500_16_001314,
                 ),
                 GestureDetector(
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangePasswordScreen()));
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChangePasswordScreen()));
                   },
                   child: SvgPicture.asset(
                     'assets/icons/downArrow.svg',
@@ -86,8 +90,9 @@ class MyAccount extends StatelessWidget {
               height: 34.h,
             ),
             GestureDetector(
-              onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DeleteAccountScreen()));
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const DeleteAccountScreen()));
               },
               child: Text(
                 'Delete Account',

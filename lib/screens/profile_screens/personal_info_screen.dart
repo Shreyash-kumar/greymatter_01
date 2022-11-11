@@ -21,6 +21,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'Account',
           style: kManRope_500_16_006D77,

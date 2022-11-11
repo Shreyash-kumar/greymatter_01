@@ -15,6 +15,7 @@ class DeleteAccountScreen extends StatelessWidget {
         elevation: 0,
         leadingWidth: 40.w,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: Text(
           'Delete Account',
           style: kManRope_500_16_006D77,
@@ -39,16 +40,41 @@ class DeleteAccountScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Email', style: kManRope_400_16_626A6A,),
-            SizedBox(height: 8.h,),
-            Text('priyasingh344@gmail.com', style: kManRope_400_16_001314,),
-            SizedBox(height: 40.h,),
-            Text('Password ', style: kManRope_400_16_626A6A,),
-            SizedBox(height: 8.h,),
-            Text('priyasingh344@gmail.com', style: kManRope_400_16_001314,),
-            SizedBox(height: 140.h,),
-            Text('"When you delete your account, all the user generated content is normally erased (although there are small exceptions), while all the log data is preserved – forever." The preserved log data won\'t have your name attached to it', style: kManRope_400_14_626A6A,),
-            SizedBox(height: 136.h,),
+            Text(
+              'Email',
+              style: kManRope_400_16_626A6A,
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            Text(
+              'priyasingh344@gmail.com',
+              style: kManRope_400_16_001314,
+            ),
+            SizedBox(
+              height: 40.h,
+            ),
+            Text(
+              'Password ',
+              style: kManRope_400_16_626A6A,
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            Text(
+              'priyasingh344@gmail.com',
+              style: kManRope_400_16_001314,
+            ),
+            SizedBox(
+              height: 140.h,
+            ),
+            Text(
+              '"When you delete your account, all the user generated content is normally erased (although there are small exceptions), while all the log data is preserved – forever." The preserved log data won\'t have your name attached to it',
+              style: kManRope_400_14_626A6A,
+            ),
+            SizedBox(
+              height: 136.h,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -62,9 +88,7 @@ class DeleteAccountScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       side: const BorderSide(color: kWhiteBGColor),
                     ),
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Cancel',
                       style: kManRope_400_16_001314,
@@ -81,9 +105,7 @@ class DeleteAccountScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       side: const BorderSide(color: kB64C4C),
                     ),
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Delete account',
                       style: kManRope_400_16_white,
