@@ -9,6 +9,7 @@ import 'package:greymatter/screens/profile_screens/help_and_support_screen.dart'
 import 'package:greymatter/screens/profile_screens/order_history_screen.dart';
 
 import '../../../constants/colors.dart';
+import '../profile_screens/my_account_screen.dart';
 import '../profile_screens/personal_info_screen.dart';
 
 class PsychologistProfileScreen extends StatefulWidget {
@@ -116,7 +117,9 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
               height: 30.h,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => PsychologistAccountScreen()));
+              },
               child: Container(
                 color: Colors.transparent,
                 child: Row(
@@ -127,7 +130,9 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
                       style: kManRope_500_16_001314,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PsychologistAccountScreen()));
+                      },
                       child: SvgPicture.asset(
                         'assets/icons/rightArrow.svg',
                         height: 12,
