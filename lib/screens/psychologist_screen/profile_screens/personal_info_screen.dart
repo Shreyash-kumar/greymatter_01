@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greymatter/screens/psychologist_screen/profile_screens/basic_details_widget.dart';
-import 'package:greymatter/widgets/app_bar/app_bar.dart';
-
 import '../../../constants/colors.dart';
 import '../../../constants/fonts.dart';
+import '../../../widgets/app_bar/white_app_bar.dart';
 import 'doctor_profile_widget.dart';
 
 class PsychologistPersonalInfoScreen extends StatefulWidget {
@@ -22,9 +21,7 @@ class _PsychologistPersonalInfoScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteBGColor,
-      appBar: CustomAppBar(
-        appBarText: 'Account',
-      ),
+      appBar: WhiteCustomAppBar(appBarText: 'Account'),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 40.h),

@@ -2,17 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../constants/colors.dart';
-import '../../constants/fonts.dart';
+import 'package:greymatter/widgets/app_bar/white_app_bar.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/fonts.dart';
 
-class EditPersonalInfo extends StatefulWidget {
-  const EditPersonalInfo({Key? key}) : super(key: key);
+class PsychologistEditPersonalInfo extends StatefulWidget {
+  const PsychologistEditPersonalInfo({Key? key}) : super(key: key);
 
   @override
-  State<EditPersonalInfo> createState() => _EditPersonalInfoState();
+  State<PsychologistEditPersonalInfo> createState() => _PsychologistEditPersonalInfoState();
 }
 
-class _EditPersonalInfoState extends State<EditPersonalInfo> {
+class _PsychologistEditPersonalInfoState extends State<PsychologistEditPersonalInfo> {
   DateTime date = DateTime(2016, 10, 26);
 
   void _showDialog(Widget child) {
@@ -96,54 +97,22 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
         builder: (BuildContext context) => const GenderBottomSheet());
   }
 
-  void _selectRelationshipStatus() {
+  void _selectDesignation() {
     showModalBottomSheet(
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(8), topLeft: Radius.circular(8)),
         ),
         context: context,
-        builder: (context) => const RelationshipBottomSheet());
+        builder: (context) => const DesignationBottomSheet());
   }
 
-  void _selectOccupation() {
-    showModalBottomSheet(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(8), topLeft: Radius.circular(8)),
-        ),
-        context: context,
-        builder: (context) => const OccupationBottomSheet());
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteBGColor,
-      appBar: AppBar(
-        elevation: 0,
-        leadingWidth: 40.w,
-        centerTitle: false,
-        backgroundColor: Colors.white,
-        title: Text(
-          'Account',
-          style: kManRope_500_16_006D77,
-        ),
-        titleSpacing: 18.w,
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: const Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 20,
-            ),
-          ),
-        ),
-      ),
+      appBar: WhiteCustomAppBar(appBarText: 'Account'),
       body: Padding(
         padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 40.h),
         child: SingleChildScrollView(
@@ -159,6 +128,8 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
                     width: 106.w,
                     decoration: const BoxDecoration(
                         color: Color(0xFF006D77), shape: BoxShape.circle),
+                    child: Image.asset('assets/images/userP.png'),
+                    clipBehavior: Clip.hardEdge,
                   ),
                 ],
               ),
@@ -312,11 +283,11 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Relationship status',
+                    'Designation',
                     style: kManRope_400_16_626A6A,
                   ),
                   GestureDetector(
-                    onTap: () => _selectRelationshipStatus(),
+                    onTap: () => _selectDesignation(),
                     child: SvgPicture.asset(
                       'assets/icons/downArrow.svg',
                       height: 24,
@@ -333,7 +304,7 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
                 child: TextField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Single',
+                    hintText: 'Other',
                     hintStyle: kManRope_400_16_001314,
                   ),
                   style: kManRope_400_16_001314,
@@ -348,49 +319,17 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
                 color: kB5BABA,
               ),
               SizedBox(
-                height: 20.h,
+                height: 32.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Occupation',
-                    style: kManRope_400_16_626A6A,
-                  ),
-                  GestureDetector(
-                    onTap: () => _selectOccupation(),
-                    child: SvgPicture.asset(
-                      'assets/icons/downArrow.svg',
-                      height: 24,
-                      width: 24,
-                    ),
-                  ),
+                  Text('Add signature', style: kManRope_400_16_626A6A,),
+                  SvgPicture.asset('assets/icons/plus-square.svg', height: 24.h,width: 24.w,),
                 ],
               ),
               SizedBox(
-                height: 12.h,
-              ),
-              SizedBox(
-                height: 20,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Student',
-                    hintStyle: kManRope_400_16_001314,
-                  ),
-                  style: kManRope_400_16_001314,
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Container(
-                height: 1.5.h,
-                width: 380,
-                color: kB5BABA,
-              ),
-              SizedBox(
-                height: 30.h,
+                height: 50.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -401,7 +340,7 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
                     child: MaterialButton(
                       color: k006D77,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), // <-- Radius
+                        borderRadius: BorderRadius.circular(48), // <-- Radius
                       ),
                       onPressed: () {},
                       child: Text(
@@ -491,16 +430,16 @@ class _GenderBottomSheetState extends State<GenderBottomSheet> {
                         width: 78.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
+                          const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 0 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                          'Female',
-                          style: _gIndex == 0
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
+                              'Female',
+                              style: _gIndex == 0
+                                  ? kManRope_500_16_white
+                                  : kManRope_500_16_626A6A,
+                            )),
                       ),
                     ),
                     GestureDetector(
@@ -512,16 +451,16 @@ class _GenderBottomSheetState extends State<GenderBottomSheet> {
                         width: 78.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
+                          const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 1 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                          'Male',
-                          style: _gIndex == 1
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
+                              'Male',
+                              style: _gIndex == 1
+                                  ? kManRope_500_16_white
+                                  : kManRope_500_16_626A6A,
+                            )),
                       ),
                     ),
                     GestureDetector(
@@ -533,16 +472,16 @@ class _GenderBottomSheetState extends State<GenderBottomSheet> {
                         width: 78.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
+                          const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 2 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                          'Others',
-                          style: _gIndex == 2
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
+                              'Others',
+                              style: _gIndex == 2
+                                  ? kManRope_500_16_white
+                                  : kManRope_500_16_626A6A,
+                            )),
                       ),
                     ),
                   ],
@@ -563,15 +502,15 @@ class _GenderBottomSheetState extends State<GenderBottomSheet> {
   }
 }
 
-class RelationshipBottomSheet extends StatefulWidget {
-  const RelationshipBottomSheet({Key? key}) : super(key: key);
+class DesignationBottomSheet extends StatefulWidget {
+  const DesignationBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<RelationshipBottomSheet> createState() =>
-      _RelationshipBottomSheetState();
+  State<DesignationBottomSheet> createState() =>
+      _DesignationBottomSheetState();
 }
 
-class _RelationshipBottomSheetState extends State<RelationshipBottomSheet> {
+class _DesignationBottomSheetState extends State<DesignationBottomSheet> {
   int _gIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -603,7 +542,7 @@ class _RelationshipBottomSheetState extends State<RelationshipBottomSheet> {
                       width: 50.w,
                     ),
                     Text(
-                      'Select Relationship status',
+                      'Select Designation',
                       style: kManRope_700_16_white,
                     ),
                   ],
@@ -632,19 +571,19 @@ class _RelationshipBottomSheetState extends State<RelationshipBottomSheet> {
                       }),
                       child: Container(
                         height: 44.h,
-                        width: 78.w,
+                        width: 123.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
+                          const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 0 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                          'Single',
-                          style: _gIndex == 0
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
+                              'Counselor',
+                              style: _gIndex == 0
+                                  ? kManRope_500_16_white
+                                  : kManRope_500_16_626A6A,
+                            )),
                       ),
                     ),
                     GestureDetector(
@@ -653,19 +592,19 @@ class _RelationshipBottomSheetState extends State<RelationshipBottomSheet> {
                       }),
                       child: Container(
                         height: 44.h,
-                        width: 78.w,
+                        width: 123.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
+                          const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 1 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                          'Married',
-                          style: _gIndex == 1
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
+                              'Physiatrist',
+                              style: _gIndex == 1
+                                  ? kManRope_500_16_white
+                                  : kManRope_500_16_626A6A,
+                            )),
                       ),
                     ),
                     GestureDetector(
@@ -674,19 +613,19 @@ class _RelationshipBottomSheetState extends State<RelationshipBottomSheet> {
                       }),
                       child: Container(
                         height: 44.h,
-                        width: 78.w,
+                        width: 123.w,
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
+                          const BorderRadius.all(Radius.circular(5)),
                           color: _gIndex == 2 ? k006D77 : Colors.white,
                         ),
                         child: Center(
                             child: Text(
-                          'Others',
-                          style: _gIndex == 2
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
+                              'Psychologist',
+                              style: _gIndex == 2
+                                  ? kManRope_500_16_white
+                                  : kManRope_500_16_626A6A,
+                            )),
                       ),
                     ),
                   ],
@@ -707,145 +646,3 @@ class _RelationshipBottomSheetState extends State<RelationshipBottomSheet> {
   }
 }
 
-class OccupationBottomSheet extends StatefulWidget {
-  const OccupationBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  State<OccupationBottomSheet> createState() => _OccupationBottomSheetState();
-}
-
-class _OccupationBottomSheetState extends State<OccupationBottomSheet> {
-  int _gIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 325.h,
-      child: Column(
-        children: [
-          Container(
-            height: 71.h,
-            decoration: const BoxDecoration(
-              color: k006D77,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-            ),
-            child: Padding(
-              padding: EdgeInsets.only(left: 46.w),
-              child: Center(
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 20.sp,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 80.w,
-                    ),
-                    Text(
-                      'Select Occupation',
-                      style: kManRope_700_16_white,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Container(
-            height: 190.h,
-            padding: const EdgeInsets.only(top: 6.0),
-            margin: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewInsets.bottom,
-            ),
-            // Provide a background color for the popup.
-            color: CupertinoColors.systemBackground.resolveFrom(context),
-            // Use a SafeArea widget to avoid system overlaps.
-            child: SafeArea(
-              top: false,
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 20.w),
-                child: Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () => setState(() {
-                        _gIndex = 0;
-                      }),
-                      child: Container(
-                        height: 44.h,
-                        width: 78.w,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
-                          color: _gIndex == 0 ? k006D77 : Colors.white,
-                        ),
-                        child: Center(
-                            child: Text(
-                          'Student',
-                          style: _gIndex == 0
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () => setState(() {
-                        _gIndex = 1;
-                      }),
-                      child: Container(
-                        height: 44.h,
-                        width: 78.w,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
-                          color: _gIndex == 1 ? k006D77 : Colors.white,
-                        ),
-                        child: Center(
-                            child: Text(
-                          'Working',
-                          style: _gIndex == 1
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () => setState(() {
-                        _gIndex = 2;
-                      }),
-                      child: Container(
-                        height: 44.h,
-                        width: 78.w,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(5)),
-                          color: _gIndex == 2 ? k006D77 : Colors.white,
-                        ),
-                        child: Center(
-                            child: Text(
-                          'Others',
-                          style: _gIndex == 2
-                              ? kManRope_500_16_white
-                              : kManRope_500_16_626A6A,
-                        )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          CupertinoButton(
-            child: Text(
-              'OK',
-              style: kManRope_500_16_006D77,
-            ),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-        ],
-      ),
-    );
-  }
-}
