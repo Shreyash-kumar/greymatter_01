@@ -7,6 +7,7 @@ import 'package:greymatter/constants/fonts.dart';
 import 'package:greymatter/screens/profile_screens/agreement_screen.dart';
 import 'package:greymatter/screens/profile_screens/help_and_support_screen.dart';
 import 'package:greymatter/screens/profile_screens/order_history_screen.dart';
+import 'package:greymatter/screens/psychologist_screen/profile_screens/slots_availability_screens.dart';
 
 import '../../../constants/colors.dart';
 import '../profile_screens/my_account_screen.dart';
@@ -174,8 +175,7 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const OrderHistoryScreen()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SlotsAvailabilityScreen()));
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -185,7 +185,9 @@ class _PsychologistProfileScreenState extends State<PsychologistProfileScreen> {
                     style: kManRope_500_16_001314,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => SlotsAvailabilityScreen()));
+                    },
                     child: SvgPicture.asset(
                       'assets/icons/rightArrow.svg',
                       height: 12,
