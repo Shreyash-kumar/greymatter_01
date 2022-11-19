@@ -48,15 +48,20 @@ class _ConfirmNameState extends State<ConfirmName> {
                       }, text: 'Next'),
                     ),
                     SizedBox(height: 16.h,),
-                    Container(
-                      height: 56.h,
-                      width: 380.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        border: Border.all(color: k006D77),
-                      ),
-                      child: Center(
-                        child: Text('Edit PAN', style: kManRope_500_16_006D77,),
+                    GestureDetector(
+                      onTap: (){
+
+                      },
+                      child: Container(
+                        height: 56.h,
+                        width: 380.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          border: Border.all(color: k006D77),
+                        ),
+                        child: Center(
+                          child: Text('Edit PAN', style: kManRope_500_16_006D77,),
+                        ),
                       ),
                     ),
                   ],

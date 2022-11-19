@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/screens/psychologist_screen/tabs_screen/pofile_screen.dart';
 import 'package:greymatter/screens/psychologist_screen/tabs_screen/post_screen.dart';
+import 'package:greymatter/screens/psychologist_screen/tabs_screen/prescription_screen.dart';
 
 import 'psychologist_home_screen.dart';
 
@@ -23,7 +24,7 @@ class _TabsScreenState extends State<TabsScreen> {
       extendBody: true,
       body: [
         PsychologistHomeScreen(),
-        PsychologistHomeScreen(),
+        PrescriptionScreen(),
         PsychologistPostScreen(),
         PsychologistHomeScreen(),
         PsychologistProfileScreen(),
