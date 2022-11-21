@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:greymatter/screens/psychologist_screen/my_earning_screens/withdraw_earnings_2.dart';
 import 'package:greymatter/widgets/app_bar/app_bar.dart';
 import '../../../constants/fonts.dart';
 
@@ -12,6 +13,20 @@ class BankVerifyScreen extends StatefulWidget {
 }
 
 class _BankVerifyScreenState extends State<BankVerifyScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 2), () {
+      setPage();
+    });
+    //setPage();
+  }
+
+  setPage() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => WithDrawEarningsScreen2()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
