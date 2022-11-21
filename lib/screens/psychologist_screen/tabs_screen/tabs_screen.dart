@@ -6,6 +6,7 @@ import 'package:greymatter/screens/psychologist_screen/tabs_screen/pofile_screen
 import 'package:greymatter/screens/psychologist_screen/tabs_screen/post_screen.dart';
 import 'package:greymatter/screens/psychologist_screen/tabs_screen/prescription_screen.dart';
 
+import 'my_earnings_screen.dart';
 import 'psychologist_home_screen.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _TabsScreenState extends State<TabsScreen> {
         PsychologistHomeScreen(),
         PrescriptionScreen(),
         PsychologistPostScreen(),
-        PsychologistHomeScreen(),
+        MyEarningsScreen(),
         PsychologistProfileScreen(),
       ].elementAt(_index),
       bottomNavigationBar: Container(

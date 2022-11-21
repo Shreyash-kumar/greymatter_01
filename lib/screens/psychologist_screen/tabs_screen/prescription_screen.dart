@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/constants/fonts.dart';
 
+import '../prescription_screen/precription_view_screen.dart';
+
 class PrescriptionScreen extends StatefulWidget {
   const PrescriptionScreen({Key? key}) : super(key: key);
 
@@ -94,7 +96,11 @@ class _PrescriptionScreenState extends State<PrescriptionScreen> {
                                     Text('20, Mon, 22', style: kManRope_400_14_626A6A,),
                                     Text('Pankaj Sharma', style: kManRope_400_14_626A6A,),
                                     Text('AB654151', style: kManRope_400_14_626A6A,),
-                                    SvgPicture.asset('assets/icons/eye.svg', height: 18.h, width: 18.w,)
+                                    GestureDetector(
+                                      onTap: (){
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PrescriptionViewScreen()));
+                                      },
+                                      child: SvgPicture.asset('assets/icons/eye.svg', height: 18.h, width: 18.w,),),
                                   ],
                                 ),
                                 SizedBox(height: 19.h,),
