@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/fonts.dart';
-import '../../profile_screens/edit_personal_info_screen.dart';
+import 'edit_personal_info_screen.dart';
 
 class BasicDetails extends StatefulWidget {
   const BasicDetails({Key? key}) : super(key: key);
@@ -87,14 +87,14 @@ class _BasicDetailsState extends State<BasicDetails> {
           height: 20.h,
         ),
         Text(
-          'Relationship status',
+          'Designation',
           style: kManRope_400_16_626A6A,
         ),
         SizedBox(
           height: 8.h,
         ),
         Text(
-          'Single',
+          'Other',
           style: kManRope_400_16_001314,
         ),
         SizedBox(
@@ -129,7 +129,7 @@ class _BasicDetailsState extends State<BasicDetails> {
               ),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const EditPersonalInfo()));
+                    builder: (context) =>  PsychologistEditPersonalInfo()));
               },
               child: Text(
                 'Edit',

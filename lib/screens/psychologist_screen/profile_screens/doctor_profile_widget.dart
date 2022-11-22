@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/fonts.dart';
-import '../../profile_screens/edit_personal_info_screen.dart';
+import 'edit_doctor_profile_screen.dart';
 
 class DoctorProfile extends StatefulWidget {
   const DoctorProfile({Key? key}) : super(key: key);
@@ -72,7 +72,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const EditPersonalInfo()));
+                      builder: (context) => const PsychologistEditDoctorInfo()));
                 },
                 child: Text(
                   'Edit',

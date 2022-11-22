@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:greymatter/screens/psychologist_screen/post_screen/psychologist_create_post.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/fonts.dart';
@@ -192,7 +193,9 @@ class PsychologistPostPage extends StatelessWidget {
           Positioned(
             bottom: 100.h,
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => PsychologistCreatePostScreen()));
+              },
               child: SvgPicture.asset(
                 'assets/icons/addPost_1.svg',
                 height: 72.h,
