@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/constants/fonts.dart';
+import 'package:greymatter/screens/QuestionScreen/question_screen1.dart';
 import 'package:greymatter/screens/signup_screens/forgot_password_screens/reset_password_otp_screen.dart';
 import 'package:greymatter/screens/signup_screens/sign_up_screens/enter_mobile_screen.dart';
-import 'package:greymatter/screens/welcome_screen/welcome_screen.dart';
 import 'package:greymatter/widgets/shared/buttons/custom_active_text_button.dart';
 import 'package:greymatter/widgets/shared/buttons/custom_deactive_text_button.dart';
 
@@ -142,7 +142,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               } else {
                                 FocusScope.of(context).unfocus();
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (ctx) => WelcomeScreen()));
+                                    builder: (ctx) => Questions()));
+                                /*Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (ctx) => WelcomeScreen()));*/
                               }
                             },
                             text: 'Login'),

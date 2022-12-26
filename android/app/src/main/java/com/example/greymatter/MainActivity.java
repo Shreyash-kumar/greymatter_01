@@ -1,4 +1,4 @@
-package com.example.greymatter;
+package com.locgfx.ataraxis;
 
 import io.flutter.embedding.android.FlutterActivity;
 
