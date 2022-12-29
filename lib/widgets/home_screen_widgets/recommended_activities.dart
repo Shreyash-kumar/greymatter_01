@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/constants/fonts.dart';
 import 'package:greymatter/widgets/shared/buttons/costom_secondary_text_w_icon_button.dart';
 
@@ -44,22 +43,26 @@ class _RecommendedVideosState extends State<RecommendedActivities> {
             ),
           ),
           SizedBox(height: 16.h),
-          SizedBox(
+          Container(
+            padding: EdgeInsets.only(left: 24),
             width: 1.sw,
             height: 90.h,
-            child: PageView.builder(
-              controller: PageController(viewportFraction: 0.8),
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              // controller: PageController(viewportFraction: 0.9),
               itemCount: 3,
-              onPageChanged: (v) {
+              /* onPageChanged: (v) {
                 setState(() {
                   _index2 = v;
                 });
-              },
+              },*/
               itemBuilder: (_, i) {
                 return Container(
+                  width: 250.w,
                   margin: EdgeInsets.only(right: 16.w),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
                       fit: BoxFit.fitWidth,
                       image: AssetImage(
@@ -68,9 +71,15 @@ class _RecommendedVideosState extends State<RecommendedActivities> {
                     ),
                   ),
                   child: Center(
-                    child: Text(
-                      'Nature',
-                      style: kManRope_600_18_white,
+                    child: SizedBox(
+                      width: 200,
+                      child: Center(
+                        child: Text(
+                          'Nature',
+                          overflow: TextOverflow.ellipsis,
+                          style: kManRope_600_18_white,
+                        ),
+                      ),
                     ),
                   ),
                 );
@@ -114,7 +123,7 @@ class _RecommendedVideosState extends State<RecommendedActivities> {
               ),*/
           ),
           SizedBox(height: 16.h),
-          Row(
+          /* Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
@@ -155,7 +164,7 @@ class _RecommendedVideosState extends State<RecommendedActivities> {
                 ),
               ),
             ],
-          ),
+          ),*/
           SizedBox(height: 16.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),

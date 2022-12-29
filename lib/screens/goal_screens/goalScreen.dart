@@ -84,125 +84,119 @@ class _GoalScreenState extends State<GoalScreen> {
             SizedBox(
               height: 40.h,
             ),
-            Row(
-              children: [
-                Text(
-                  'Goals',
-                  style: kManRope_500_28_001314,
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                Text(
-                  'completion 75 %',
-                  style: kManRope_500_14_626A6A,
-                ),
-                SizedBox(
-                  width: 12.w,
-                ),
-                SvgPicture.asset(
-                  'assets/icons/progressIcon.svg',
-                  height: 21.h,
-                  width: 21.w,
-                ),
-                Spacer(),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AddActivityScreen()));
-                  },
-                  child: SvgPicture.asset(
-                    'assets/icons/addPost.svg',
-                    height: 48.h,
-                    width: 48.w,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15),
+              child: Row(
+                children: [
+                  Text(
+                    'Goals',
+                    style: kManRope_500_28_001314,
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    'completion 75 %',
+                    style: kManRope_500_14_626A6A,
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/progressIcon.svg',
+                    height: 21,
+                    width: 21,
+                  ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const AddActivityScreen()));
+                    },
+                    child: SvgPicture.asset(
+                      'assets/icons/addPost.svg',
+                      height: 48.h,
+                      width: 48.w,
+                    ),
+                  ),
+                ],
+              ),
             ),
             Expanded(
-              child: ListView.separated(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemBuilder: (ctx, index) {
-                    return Container(
-                      height: 80.h,
-                      width: 380.w,
-                      clipBehavior: Clip.hardEdge,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(24),
-                        color: k5A72ED,
-                      ),
-                      child: Stack(
-                        alignment: Alignment.centerLeft,
-                        children: [
-                          Row(
-                            children: [
-                              Image.asset(
-                                'assets/images/Dots.png',
-                                width: 81.w,
-                                height: 81.h,
-                              ),
-                              Image.asset(
-                                'assets/images/Dots.png',
-                                width: 81.w,
-                                height: 81.h,
-                              ),
-                              Image.asset(
-                                'assets/images/Dots.png',
-                                width: 81.w,
-                                height: 81.h,
-                              ),
-                              Image.asset(
-                                'assets/images/Dots.png',
-                                width: 81.w,
-                                height: 81.h,
-                              ),
-                              Expanded(
-                                child: Image.asset(
-                                  'assets/images/Dots.png',
-                                  width: 81.w,
-                                  height: 81.h,
-                                  fit: BoxFit.fitHeight,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 18.w),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: MediaQuery.removePadding(
+                context: context,
+                removeTop: true,
+                child: ListView.separated(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemBuilder: (ctx, index) {
+                      return Container(
+                        margin: EdgeInsets.only(top: 16.h),
+                        height: 81.h,
+                        width: 380.w,
+                        clipBehavior: Clip.hardEdge,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: k5A72ED,
+                        ),
+                        child: Stack(
+                          alignment: Alignment.centerLeft,
+                          children: [
+                            Row(
                               children: [
-                                Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                      'assets/icons/run.svg',
-                                      height: 36.w,
-                                      width: 36.w,
-                                      fit: BoxFit.fill,
-                                    ),
-                                    SizedBox(width: 12.w),
-                                    Text(
-                                      'Running',
-                                      style: kManRope_500_16_white,
-                                    ),
-                                  ],
+                                Image.asset(
+                                  'assets/images/Framedots.png',
+
+                                  //height: 81.h,
                                 ),
-                                SvgPicture.asset(
-                                  'assets/icons/greyTick.svg',
-                                  height: 36.w,
-                                  width: 36.w,
+                                Expanded(
+                                  child: Image.asset(
+                                    'assets/images/Dots.png',
+                                    width: 81.w,
+                                    height: 81.h,
+                                    fit: BoxFit.fitHeight,
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                  separatorBuilder: (ctx, index) {
-                    return SizedBox(height: 16.h);
-                  },
-                  itemCount: 10),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 18.w),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      SvgPicture.asset(
+                                        'assets/icons/run.svg',
+                                        height: 36.w,
+                                        width: 36.w,
+                                        fit: BoxFit.fill,
+                                      ),
+                                      SizedBox(width: 12.w),
+                                      Text(
+                                        'Running',
+                                        style: kManRope_500_16_white,
+                                      ),
+                                    ],
+                                  ),
+                                  SvgPicture.asset(
+                                    'assets/icons/greyTick.svg',
+                                    height: 36.w,
+                                    width: 36.w,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                    separatorBuilder: (ctx, index) {
+                      return SizedBox(height: 0);
+                    },
+                    itemCount: 10),
+              ),
             )
           ],
         ),

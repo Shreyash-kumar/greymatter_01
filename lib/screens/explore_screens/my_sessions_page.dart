@@ -66,32 +66,51 @@ class _MySessionPageState extends State<MySessionPage> {
                       SizedBox(
                         width: 12.w,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Priyanka singh',
-                            style: kManRope_400_14_001314,
-                          ),
-                          SizedBox(
-                            height: 4.h,
-                          ),
-                          Text(
-                            'Psychologist',
-                            style: kManRope_400_12_626A6A,
-                          ),
-                          SizedBox(
-                            height: 4.h,
-                          ),
-                          Text(
-                            '05 June 2022, 8:00AM',
-                            style: kManRope_400_12_626A6A,
-                          ),
-                        ],
-                      ),
                       SizedBox(
-                        width: 65.w,
+                        width: 250.w,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Priyanka singh',
+                                  style: kManRope_400_14_001314,
+                                ),
+                                SizedBox(
+                                  height: 4.h,
+                                ),
+                                Text(
+                                  'Psychologist',
+                                  style: kManRope_400_12_626A6A,
+                                ),
+                                SizedBox(
+                                  height: 4.h,
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SizedBox(
+                                  height: 10.h,
+                                ),
+                                Text(
+                                  '05 June 2022',
+                                  style: kManRope_400_12_626A6A,
+                                ),
+                                Text(
+                                  '8:00AM',
+                                  style: kManRope_400_12_626A6A,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
+                      /*SizedBox(
+                        width: 65.w,
+                      ),*/
                       /*Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [

@@ -5,6 +5,7 @@ import 'package:greymatter/screens/posts_screens/create_post_screen.dart';
 
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
+import 'comment_page.dart';
 
 class PostPage extends StatelessWidget {
   const PostPage({Key? key}) : super(key: key);
@@ -40,8 +41,8 @@ class PostPage extends StatelessWidget {
                                 Row(
                                   children: [
                                     Container(
-                                      width: 45.w,
-                                      height: 45.w,
+                                      width: 45,
+                                      height: 45,
                                       clipBehavior: Clip.hardEdge,
                                       decoration: BoxDecoration(
                                           color: Colors.grey,
@@ -65,10 +66,277 @@ class PostPage extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SvgPicture.asset(
-                                  'assets/icons/kebabMenu.svg',
-                                  height: 24.h,
-                                  width: 24.w,
+                                GestureDetector(
+                                  onTap: () {
+                                    showModalBottomSheet(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                                topLeft:
+                                                    const Radius.circular(20.0),
+                                                topRight: const Radius.circular(
+                                                    20.0))),
+                                        context: context,
+                                        builder: (builder) {
+                                          return Container(
+                                              height: 180,
+                                              decoration: new BoxDecoration(
+                                                  // color: Colors.transparent,
+                                                  borderRadius:
+                                                      new BorderRadius.only(
+                                                          topLeft: const Radius
+                                                              .circular(20.0),
+                                                          topRight: const Radius
+                                                              .circular(20.0))),
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 16),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                        top: 24,
+                                                      ),
+                                                      child: Container(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 300,
+                                                        height: 35,
+                                                        child: Center(
+                                                          child: Text(
+                                                            "Share",
+                                                            style:
+                                                                kManRope_400_14_001314,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      color: Colors.transparent,
+                                                      width: 300,
+                                                      height: 35,
+                                                      child: Center(
+                                                        child: Text(
+                                                          "Save",
+                                                          style:
+                                                              kManRope_400_14_001314,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      color: Colors.transparent,
+                                                      width: 300,
+                                                      height: 35,
+                                                      child: Center(
+                                                        child: Text(
+                                                          "Hide",
+                                                          style:
+                                                              kManRope_400_14_001314,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    /*SizedBox(
+                                                      height: 24,
+                                                    ),*/
+                                                    GestureDetector(
+                                                      onTap: () {
+                                                        showModalBottomSheet(
+                                                            shape: RoundedRectangleBorder(
+                                                                borderRadius: BorderRadius.only(
+                                                                    topLeft: const Radius
+                                                                            .circular(
+                                                                        20.0),
+                                                                    topRight: const Radius
+                                                                            .circular(
+                                                                        20.0))),
+                                                            context: context,
+                                                            builder: (builder) {
+                                                              return Container(
+                                                                  height: 300,
+                                                                  decoration:
+                                                                      new BoxDecoration(
+                                                                          // color: Colors.transparent,
+                                                                          borderRadius: new BorderRadius.only(
+                                                                              topLeft: const Radius.circular(20.0),
+                                                                              topRight: const Radius.circular(20.0))),
+                                                                  child: Padding(
+                                                                    padding: const EdgeInsets
+                                                                            .only(
+                                                                        left:
+                                                                            34),
+                                                                    child:
+                                                                        Column(
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                      children: [
+                                                                        /*SizedBox(
+                                                                          height:
+                                                                              34,
+                                                                        ),*/
+                                                                        Container(
+                                                                          width:
+                                                                              340,
+                                                                          height:
+                                                                              35,
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(top: 10, left: 10),
+                                                                            child:
+                                                                                Text(
+                                                                              "Spam ",
+                                                                              style: kManRope_400_14_001314,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Container(
+                                                                          width:
+                                                                              340,
+                                                                          height:
+                                                                              35,
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(top: 10, left: 10),
+                                                                            child:
+                                                                                Text(
+                                                                              "False information",
+                                                                              style: kManRope_400_14_001314,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Container(
+                                                                          width:
+                                                                              340,
+                                                                          height:
+                                                                              35,
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(top: 10, left: 10),
+                                                                            child:
+                                                                                Text(
+                                                                              "Harassment or hateful speech",
+                                                                              style: kManRope_400_14_001314,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Container(
+                                                                          width:
+                                                                              340,
+                                                                          height:
+                                                                              35,
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(top: 10, left: 10),
+                                                                            child:
+                                                                                Text(
+                                                                              "Adult content",
+                                                                              style: kManRope_400_14_001314,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Container(
+                                                                          width:
+                                                                              340,
+                                                                          height:
+                                                                              35,
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(top: 10, left: 10),
+                                                                            child:
+                                                                                Text(
+                                                                              "Volence or physical harm",
+                                                                              style: kManRope_400_14_001314,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Container(
+                                                                          width:
+                                                                              340,
+                                                                          height:
+                                                                              35,
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(top: 10, left: 10),
+                                                                            child:
+                                                                                Text(
+                                                                              "Block user",
+                                                                              style: kManRope_400_14_001314,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Container(
+                                                                          width:
+                                                                              340,
+                                                                          height:
+                                                                              35,
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(top: 10, left: 10),
+                                                                            child:
+                                                                                Text(
+                                                                              "None of the reporting reasons apply",
+                                                                              style: kManRope_400_14_001314,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ));
+                                                            });
+                                                      },
+                                                      child: Container(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 300,
+                                                        height: 35,
+                                                        child: Center(
+                                                          child: Text(
+                                                            "Report",
+                                                            style:
+                                                                kManRope_400_14_001314,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    /*SizedBox(
+                                                      height: 24,
+                                                    ),*/
+                                                  ],
+                                                ),
+                                              ));
+                                        });
+                                  },
+                                  child: SvgPicture.asset(
+                                    'assets/icons/kebabMenu.svg',
+                                    height: 24.h,
+                                    width: 24.w,
+                                  ),
                                 ),
                               ],
                             ),
@@ -95,15 +363,35 @@ class PostPage extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
+                                  SizedBox(
+                                    width: 10,
+                                  ),
                                   SvgPicture.asset(
                                     'assets/icons/likeIcon.svg',
                                     height: 24.h,
                                     width: 24.w,
                                   ),
                                   SizedBox(
-                                    width: 15.w,
+                                    width: 12,
                                   ),
                                   Text('375', style: kManRope_400_14_Black),
+                                  SizedBox(
+                                    width: 30,
+                                  ),
+                                  GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CommentPage()));
+                                      },
+                                      child: SvgPicture.asset(
+                                          'assets/icons/comm.svg')),
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  Text('20', style: kManRope_400_14_Black),
                                 ],
                               ),
                               Row(
@@ -114,13 +402,16 @@ class PostPage extends StatelessWidget {
                                     width: 24.w,
                                   ),
                                   SizedBox(
-                                    width: 8.w,
+                                    width: 30,
                                   ),
                                   SvgPicture.asset(
                                     'assets/icons/share.svg',
                                     height: 24.h,
                                     width: 24.w,
                                   ),
+                                  SizedBox(
+                                    width: 5,
+                                  )
                                 ],
                               )
                             ],
@@ -128,10 +419,24 @@ class PostPage extends StatelessWidget {
                           SizedBox(
                             height: 30.h,
                           ),
-                          Text(
+                          Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text:
+                                      '“There is only one way to happiness and that is to cease worrying about things which are beyond the power of our will.” ...',
+                                  style: kManRope_600_14_626A6A,
+                                ),
+                                TextSpan(
+                                    text: 'Read more',
+                                    style: kManRope_400_14_006D77),
+                              ],
+                            ),
+                          )
+                          /* Text(
                             '“There is only one way to happiness and that is to cease worrying about things which are beyond the power of our will.” ...Read more',
                             style: kManRope_600_14_626A6A,
-                          )
+                          )*/
                         ],
                       ),
                     );

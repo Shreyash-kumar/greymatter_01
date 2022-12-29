@@ -111,7 +111,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   AnimatedContainer(
                     width: 24.w,
                     decoration: BoxDecoration(
-                      color: _index == 0 ? k5A72ED : Colors.transparent,
+                      color: _index % 4 == 0 ? k5A72ED : Colors.transparent,
                       borderRadius: BorderRadius.circular(2),
                     ),
                     duration: const Duration(milliseconds: 200),
@@ -119,7 +119,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   AnimatedContainer(
                     width: 24.w,
                     decoration: BoxDecoration(
-                      color: _index == 1 ? k5A72ED : Colors.transparent,
+                      color: _index % 4 == 1 ? k5A72ED : Colors.transparent,
                       borderRadius: BorderRadius.circular(2),
                     ),
                     duration: const Duration(milliseconds: 200),
@@ -127,7 +127,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   AnimatedContainer(
                     width: 24.w,
                     decoration: BoxDecoration(
-                      color: _index == 2 ? k5A72ED : Colors.transparent,
+                      color: _index % 4 == 2 ? k5A72ED : Colors.transparent,
                       borderRadius: BorderRadius.circular(2),
                     ),
                     duration: const Duration(milliseconds: 200),
@@ -135,7 +135,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   AnimatedContainer(
                     width: 24.w,
                     decoration: BoxDecoration(
-                      color: _index == 3 ? k5A72ED : Colors.transparent,
+                      color: _index % 4 == 3 ? k5A72ED : Colors.transparent,
                       borderRadius: BorderRadius.circular(2),
                     ),
                     duration: const Duration(milliseconds: 200),

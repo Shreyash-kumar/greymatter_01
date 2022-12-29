@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greymatter/screens/posts_screens/post_page.dart';
 import 'package:greymatter/screens/posts_screens/saved_screen.dart';
+
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
 
@@ -30,10 +31,11 @@ class _PostScreenState extends State<PostScreen> {
           child: Column(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  SizedBox(),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         _index = 0;
                       });
@@ -43,8 +45,9 @@ class _PostScreenState extends State<PostScreen> {
                       style: kManRope_700_16_001314,
                     ),
                   ),
+                  SizedBox(),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         _index = 1;
                       });
@@ -54,26 +57,32 @@ class _PostScreenState extends State<PostScreen> {
                       style: kManRope_700_16_001314,
                     ),
                   ),
-                  SizedBox(width: 1.w,),
+                  SizedBox(
+                    width: 1.w,
+                  ),
                 ],
               ),
               SizedBox(
-                height: 12.h,
+                height: 14.h,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  SizedBox(),
                   Container(
                     height: 2.h,
                     width: 60.w,
-                    color: _index==0? k006D77: Colors.white,
+                    color: _index == 0 ? k006D77 : Colors.white,
                   ),
+                  SizedBox(),
                   Container(
                     height: 2.h,
                     width: 60.w,
-                    color: _index==1? k006D77: Colors.white,
+                    color: _index == 1 ? k006D77 : Colors.white,
                   ),
-                  SizedBox(width: 18.w,),
+                  SizedBox(
+                    width: 5.w,
+                  ),
                 ],
               ),
             ],

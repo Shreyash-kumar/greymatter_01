@@ -23,6 +23,7 @@ class SliderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 330.w,
+      margin: EdgeInsets.only(right: 16),
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
       decoration: BoxDecoration(
         image: DecorationImage(image: AssetImage(_bgImageList[index])),
@@ -51,15 +52,22 @@ class SliderCard extends StatelessWidget {
               ),
               SizedBox(height: 16.h),
               DottedBorder(
-                child: Text('WELCOME30', style: kManRope_500_16_006D77,),
+                child: Text(
+                  'WELCOME30',
+                  style: kManRope_500_16_006D77,
+                ),
                 radius: const Radius.circular(16),
                 padding: const EdgeInsets.all(16),
                 borderType: BorderType.RRect,
               )
             ],
           )),
-
-          Expanded(child: Image.asset(_charImageList[index],width: 95.w,height: 115.h,))
+          Expanded(
+              child: Image.asset(
+            _charImageList[index],
+            width: 95.w,
+            height: 115.h,
+          ))
         ],
       ),
     );

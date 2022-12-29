@@ -18,10 +18,13 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Atar Axis',
-            home: SplashScreen(),
-          );
+              debugShowCheckedModeBanner: false,
+              title: 'Atar Axis',
+              home: //MySessionPage(),
+                  //   BookingSuccessfulScreen()
+                  //SessionSuccessful()
+                  SplashScreen());
+          //PostScreen());
         });
   }
 }

@@ -1,8 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:greymatter/constants/colors.dart';
 import 'package:greymatter/constants/fonts.dart';
 import 'package:greymatter/screens/play_videos/all_videos.dart';
 import 'package:greymatter/widgets/shared/buttons/costom_secondary_text_w_icon_button.dart';
@@ -21,8 +19,8 @@ class _RecommendedVideosState extends State<RecommendedVideos> {
   Widget build(BuildContext context) {
     return Container(
       // color: Colors.white,
-      height: 450.h,
-      padding: EdgeInsets.only(top: 20.h),
+      //height: 376.h,
+      padding: EdgeInsets.only(top: 20.h, bottom: 20.h),
       width: 1.sw,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,17 +39,26 @@ class _RecommendedVideosState extends State<RecommendedVideos> {
                   'Relax your mind with us',
                   style: kManRope_400_16_626A64_07,
                 ),
+                SizedBox(
+                  height: 24,
+                )
               ],
             ),
           ),
-          SizedBox(
+          Container(
+            padding: EdgeInsets.only(left: 24),
             width: 1.sw,
-            height: 250.h,
-            child: CarouselSlider.builder(
+            height: 190.h,
+            child: ListView.separated(
+              separatorBuilder: (ctx, ind) => SizedBox(
+                width: 16.w,
+              ),
               itemCount: 3,
-              itemBuilder: (BuildContext context, int index, int realIndex) {
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (BuildContext context, int realIndex) {
                 return Container(
-                  width: 300.w,
+                  width: 248.w,
                   height: 140.h,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -66,7 +73,7 @@ class _RecommendedVideosState extends State<RecommendedVideos> {
                   ),
                 );
               },
-              options: CarouselOptions(
+              /* options: CarouselOptions(
                   onPageChanged: (index, reason) {
                     setState(() {
                       _index2 = index;
@@ -75,10 +82,11 @@ class _RecommendedVideosState extends State<RecommendedVideos> {
                   aspectRatio: 16 / 8,
                   viewportFraction: 0.8,
                   reverse: false,
-                  enableInfiniteScroll: false),
+                  enableInfiniteScroll: false),*/
             ),
           ),
-          Row(
+          /* dots for
+           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
@@ -119,7 +127,7 @@ class _RecommendedVideosState extends State<RecommendedVideos> {
                 ),
               ),
             ],
-          ),
+          ),*/
           SizedBox(height: 16.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),

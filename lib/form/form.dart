@@ -24,7 +24,7 @@ class Form1 extends StatefulWidget {
 }
 
 class _Form1State extends State<Form1> {
-  int _radioSelected = 1;
+  int _radioSelected = 0;
   String _radioVal = '';
 
   bool a = false;
@@ -72,54 +72,63 @@ class _Form1State extends State<Form1> {
                   ),
                   widget.labels.isEmpty
                       ? Container(
-                          height: 52.h,
+                          height: 100.h,
                           width: 328.w,
                           decoration: BoxDecoration(
                               //color: ColorSelect.colorEDEDF1,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8))),
-                          child: DropdownButton<String>(
-                            hint: Text(
-                              'Male',
-                              style: kManRope_400_16_263238,
-                            ),
-                            isExpanded: true,
-                            icon: Image.asset('assets/images/dropdown.png'),
-                            iconSize: 24,
-                            elevation: 0,
-                            underline: SizedBox(),
-                            items: <String>[
-                              'Male',
-                              'Female',
-                              'Agender',
-                              'Bigender',
-                              'Genderfluid',
-                              'Genderqueer',
-                              'Gender nonconforming',
-                              'Gender questioning',
-                              'Gender variant',
-                              'Intersex',
-                              'Intersex man',
-                              'Intersex woman',
-                              'Neutrois',
-                              'Nonbinary man',
-                              'Nonbinary woman',
-                              'Pangender',
-                              'Polygender',
-                              'Transgender',
-                              'Trans man',
-                              'Transmasculine',
-                              'Trans woman',
-                              'Transfeminine',
-                              'Two-spirit',
-                              'Tell us if we’re missing something'
-                            ].map((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                            onChanged: (value) {},
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              DropdownButton<String>(
+                                hint: Text(
+                                  'Male',
+                                  style: kManRope_400_16_263238,
+                                ),
+                                isExpanded: true,
+                                icon: Image.asset('assets/images/dropdown.png'),
+                                iconSize: 24,
+                                elevation: 0,
+                                underline: SizedBox(),
+                                items: <String>[
+                                  'Male',
+                                  'Female',
+                                  'Agender',
+                                  'Bigender',
+                                  'Genderfluid',
+                                  'Genderqueer',
+                                  'Gender nonconforming',
+                                  'Gender questioning',
+                                  'Gender variant',
+                                  'Intersex',
+                                  'Intersex man',
+                                  'Intersex woman',
+                                  'Neutrois',
+                                  'Nonbinary man',
+                                  'Nonbinary woman',
+                                  'Pangender',
+                                  'Polygender',
+                                  'Transgender',
+                                  'Trans man',
+                                  'Transmasculine',
+                                  'Trans woman',
+                                  'Transfeminine',
+                                  'Two-spirit',
+                                  'Tell us if we’re missing something'
+                                ].map((String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value,
+                                    child: Text(value),
+                                  );
+                                }).toList(),
+                                onChanged: (value) {},
+                              ),
+                              SizedBox(
+                                height: 20.h,
+                              ),
+                              Text("Tell us if we’re missing something")
+                            ],
                           ),
                         )
                       : ListView.builder(
@@ -162,10 +171,13 @@ class _Form1State extends State<Form1> {
                             suffixIcon: 'clock')
                         .textFieldDecoration(),
                   ),*/
-                  for (int i = 0; i < widget.labels.length; i++)
-                    SizedBox(height: 16),
+                  // for (int i = 0; i < widget.labels.length; i++)
+                  // SizedBox(height: 16.h),
                 ],
               ),
+            SizedBox(
+              height: 30,
+            ),
             SizedBox(
               width: 1.sw,
               height: 56,

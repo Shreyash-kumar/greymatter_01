@@ -51,8 +51,8 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 106.h,
-                  width: 106.w,
+                  height: 102.h,
+                  width: 102.w,
                   decoration: const BoxDecoration(
                       color: Color(0xFF006D77), shape: BoxShape.circle),
                 ),
@@ -140,7 +140,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   child: MaterialButton(
                     color: k006D77,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10), // <-- Radius
+                      borderRadius: BorderRadius.circular(48), // <-- Radius
                     ),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(

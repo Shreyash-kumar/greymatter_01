@@ -121,25 +121,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 24.h),
                     Container(
-                        height: 250.h,
-                        child: CarouselSlider.builder(
-                          options: CarouselOptions(
-                              onPageChanged: (index, reason) {
-                                setState(() {
-                                  _index = index;
-                                });
-                              },
-                              aspectRatio: 16 / 9,
-                              viewportFraction: 0.8,
-                              autoPlay: true,
-                              reverse: false,
-                              enableInfiniteScroll: false),
-                          itemBuilder:
-                              (BuildContext context, int index, int realIndex) {
-                            return SliderCard(index: realIndex);
+                      height: 250.h,
+                      child: CarouselSlider.builder(
+                        options: CarouselOptions(
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              _index = index;
+                            });
+                            print(_index);
                           },
-                          itemCount: 3,
-                        )),
+                          aspectRatio: 16 / 9,
+                          viewportFraction: 0.8,
+                          autoPlay: true,
+                          reverse: false,
+                          enableInfiniteScroll: false,
+                        ),
+                        itemBuilder:
+                            (BuildContext context, int index, int realIndex) {
+                          return SliderCard(
+                              index: int.parse((realIndex % 3).toString()));
+                        },
+                        itemCount: 300,
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24.h),
                       child: Column(
@@ -162,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     AnimatedContainer(
                                       width: 24.w,
                                       decoration: BoxDecoration(
-                                        color: _index == 0
+                                        color: _index % 3 == 0
                                             ? k5A72ED
                                             : Colors.transparent,
                                         borderRadius: BorderRadius.circular(2),
@@ -173,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     AnimatedContainer(
                                       width: 24.w,
                                       decoration: BoxDecoration(
-                                        color: _index == 1
+                                        color: _index % 3 == 1
                                             ? k5A72ED
                                             : Colors.transparent,
                                         borderRadius: BorderRadius.circular(2),
@@ -184,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     AnimatedContainer(
                                       width: 24.w,
                                       decoration: BoxDecoration(
-                                        color: _index == 2
+                                        color: _index % 3 == 2
                                             ? k5A72ED
                                             : Colors.transparent,
                                         borderRadius: BorderRadius.circular(2),
@@ -280,98 +284,102 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 400.h,
                         padding: EdgeInsets.only(top: 20.h),
                         width: 1.sw,
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              width: 1.sw,
-                              height: 250.h,
-                              child: CarouselSlider.builder(
-                                itemCount: 3,
-                                itemBuilder: (BuildContext context, int index,
-                                    int realIndex) {
-                                  return PsychologistSlider();
-                                },
-                                options: CarouselOptions(
-                                    onPageChanged: (index, reason) {
-                                      setState(() {
-                                        _index2 = index;
-                                      });
-                                    },
-                                    aspectRatio: 1 / 2,
-                                    viewportFraction: 0.8,
-                                    reverse: false,
-                                    enableInfiniteScroll: false),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  height: 4.h,
-                                  decoration: BoxDecoration(
-                                    color: k5A72ED.withOpacity(0.15),
-                                    borderRadius: BorderRadius.circular(2),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      AnimatedContainer(
-                                        width: 24.w,
-                                        decoration: BoxDecoration(
-                                          color: _index2 == 0
-                                              ? k5A72ED
-                                              : Colors.transparent,
-                                          borderRadius:
-                                              BorderRadius.circular(2),
-                                        ),
-                                        duration:
-                                            const Duration(milliseconds: 200),
-                                      ),
-                                      AnimatedContainer(
-                                        width: 24.w,
-                                        decoration: BoxDecoration(
-                                          color: _index2 == 1
-                                              ? k5A72ED
-                                              : Colors.transparent,
-                                          borderRadius:
-                                              BorderRadius.circular(2),
-                                        ),
-                                        duration:
-                                            const Duration(milliseconds: 200),
-                                      ),
-                                      AnimatedContainer(
-                                        width: 24.w,
-                                        decoration: BoxDecoration(
-                                          color: _index2 == 2
-                                              ? k5A72ED
-                                              : Colors.transparent,
-                                          borderRadius:
-                                              BorderRadius.circular(2),
-                                        ),
-                                        duration:
-                                            const Duration(milliseconds: 200),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 16.h),
-                            Container(
-                              width: 1.sw,
-                              height: 56.h,
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: CustomSecondaryButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (ctx) =>
-                                                AllPsychologistScreen()));
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                width: 1.sw,
+                                height: 223.h,
+                                child: ListView.builder(
+                                  itemCount: 3,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, int realIndex) {
+                                    return PsychologistSlider();
                                   },
-                                  text: 'View All Psychologist'),
-                            )
-                          ],
+                                  /*options: CarouselOptions(
+                                      onPageChanged: (index, reason) {
+                                        setState(() {
+                                          _index2 = index;
+                                        });
+                                      },*/
+                                  /*aspectRatio: 1 / 2,
+                                      viewportFraction: 0.8,
+                                      reverse: false,
+                                      enableInfiniteScroll: false),*/
+                                ),
+                              ),
+                              /*Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 4.h,
+                                    decoration: BoxDecoration(
+                                      color: k5A72ED.withOpacity(0.15),
+                                      borderRadius: BorderRadius.circular(2),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        AnimatedContainer(
+                                          width: 24.w,
+                                          decoration: BoxDecoration(
+                                            color: _index2 == 0
+                                                ? k5A72ED
+                                                : Colors.transparent,
+                                            borderRadius:
+                                                BorderRadius.circular(2),
+                                          ),
+                                          duration:
+                                              const Duration(milliseconds: 200),
+                                        ),
+                                        AnimatedContainer(
+                                          width: 24.w,
+                                          decoration: BoxDecoration(
+                                            color: _index2 == 1
+                                                ? k5A72ED
+                                                : Colors.transparent,
+                                            borderRadius:
+                                                BorderRadius.circular(2),
+                                          ),
+                                          duration:
+                                              const Duration(milliseconds: 200),
+                                        ),
+                                        AnimatedContainer(
+                                          width: 24.w,
+                                          decoration: BoxDecoration(
+                                            color: _index2 == 2
+                                                ? k5A72ED
+                                                : Colors.transparent,
+                                            borderRadius:
+                                                BorderRadius.circular(2),
+                                          ),
+                                          duration:
+                                              const Duration(milliseconds: 200),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),*/
+                              SizedBox(height: 16.h),
+                              Container(
+                                width: 1.sw,
+                                height: 56.h,
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: CustomSecondaryButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (ctx) =>
+                                                  AllPsychologistScreen()));
+                                    },
+                                    text: 'View All Psychologist'),
+                              )
+                            ],
+                          ),
                         )),
                     const RecommendedVideos(),
                     const RecommendedActivities(),

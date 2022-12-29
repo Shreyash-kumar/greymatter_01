@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../constants/colors.dart';
 import '../../constants/fonts.dart';
+import 'comment_page.dart';
 
 class SavedScreen extends StatelessWidget {
   const SavedScreen({Key? key}) : super(key: key);
@@ -35,8 +36,8 @@ class SavedScreen extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                width: 45.w,
-                                height: 45.h,
+                                width: 45,
+                                height: 45,
                                 clipBehavior: Clip.hardEdge,
                                 decoration: BoxDecoration(
                                     color: Colors.grey,
@@ -87,15 +88,34 @@ class SavedScreen extends StatelessWidget {
                       children: [
                         Row(
                           children: [
+                            SizedBox(
+                              width: 10,
+                            ),
                             SvgPicture.asset(
                               'assets/icons/likeIcon.svg',
                               height: 24.h,
                               width: 24.w,
                             ),
                             SizedBox(
-                              width: 15.w,
+                              width: 12,
                             ),
                             Text('375', style: kManRope_400_14_Black),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => CommentPage()));
+                                },
+                                child:
+                                    SvgPicture.asset('assets/icons/comm.svg')),
+                            SizedBox(
+                              width: 12,
+                            ),
+                            Text('20', style: kManRope_400_14_Black),
                           ],
                         ),
                         Row(
@@ -106,13 +126,16 @@ class SavedScreen extends StatelessWidget {
                               width: 24.w,
                             ),
                             SizedBox(
-                              width: 8.w,
+                              width: 30,
                             ),
                             SvgPicture.asset(
                               'assets/icons/share.svg',
                               height: 24.h,
                               width: 24.w,
                             ),
+                            SizedBox(
+                              width: 5,
+                            )
                           ],
                         )
                       ],
@@ -120,9 +143,18 @@ class SavedScreen extends StatelessWidget {
                     SizedBox(
                       height: 30.h,
                     ),
-                    Text(
-                      '“There is only one way to happiness and that is to cease worrying about things which are beyond the power of our will.” ...Read more',
-                      style: kManRope_600_14_626A6A,
+                    Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text:
+                                '“There is only one way to happiness and that is to cease worrying about things which are beyond the power of our will.” ...',
+                            style: kManRope_600_14_626A6A,
+                          ),
+                          TextSpan(
+                              text: 'Read more', style: kManRope_400_14_006D77),
+                        ],
+                      ),
                     )
                   ],
                 ),

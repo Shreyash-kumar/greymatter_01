@@ -35,249 +35,304 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.only(left: 24.w, top: 100.h, right: 24.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  height: 55.h,
-                  width: 55.w,
-                  clipBehavior: Clip.hardEdge,
-                  decoration: const BoxDecoration(
-                    color: Colors.grey,
-                    shape: BoxShape.circle,
+      backgroundColor: kWhiteBGColor,
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.only(left: 24.w, top: 100.h, right: 24.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    height: 55.h,
+                    width: 55.w,
+                    clipBehavior: Clip.hardEdge,
+                    decoration: const BoxDecoration(
+                      color: Colors.grey,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset('assets/images/userP.png'),
                   ),
-                  child: Image.asset('assets/images/userP.png'),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Priya singh',
+                        style: kManRope_500_16_001314,
+                      ),
+                      SizedBox(
+                        height: 4.h,
+                      ),
+                      Text(
+                        'priyasingh344@gmail.com',
+                        style: kManRope_400_14_626A6A,
+                      )
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 35.h,
+              ),
+              Text(
+                'Account',
+                style: kManRope_400_12_626A6A,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const PersonalInfoScreen()));
+                },
+                child: Container(
+                  height: 48,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Personal Info',
+                        style: kManRope_500_16_001314,
+                      ),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    const PersonalInfoScreen()));
+                          },
+                          child: SvgPicture.asset(
+                            'assets/icons/rightArrow.svg',
+                            height: 12,
+                            width: 6,
+                          )),
+                    ],
+                  ),
                 ),
-                SizedBox(
-                  width: 16.w,
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const MyAccount()));
+                },
+                child: Container(
+                  height: 48,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'My account',
+                        style: kManRope_500_16_001314,
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => const MyAccount())),
+                        child: SvgPicture.asset(
+                          'assets/icons/rightArrow.svg',
+                          height: 12,
+                          width: 6,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Priya singh',
-                      style: kManRope_500_16_001314,
-                    ),
-                    SizedBox(
-                      height: 4.h,
-                    ),
-                    Text(
-                      'priyasingh344@gmail.com',
-                      style: kManRope_400_14_626A6A,
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 35.h,
-            ),
-            Text(
-              'Account',
-              style: kManRope_400_12_626A6A,
-            ),
-            SizedBox(
-              height: 30.h,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const PersonalInfoScreen()));
-              },
-              child: Container(
-                color: Colors.transparent,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Personal Info',
-                      style: kManRope_500_16_001314,
-                    ),
-                    GestureDetector(
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  /*Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const OrderHistoryScreen()));*/
+                },
+                child: Container(
+                  height: 48,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'My activity ',
+                        style: kManRope_500_16_001314,
+                      ),
+                      GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) =>
-                                  const PersonalInfoScreen()));
+                                  const OrderHistoryScreen()));
                         },
                         child: SvgPicture.asset(
                           'assets/icons/rightArrow.svg',
                           height: 12,
                           width: 6,
-                        )),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 30.h,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const MyAccount()));
-              },
-              child: Container(
-                color: Colors.transparent,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'My account',
-                      style: kManRope_500_16_001314,
-                    ),
-                    GestureDetector(
-                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const MyAccount())),
-                      child: SvgPicture.asset(
-                        'assets/icons/rightArrow.svg',
-                        height: 12,
-                        width: 6,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 30.h,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const OrderHistoryScreen()));
-              },
-              child: Row(
+              SizedBox(
+                height: 8.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const OrderHistoryScreen()));
+                },
+                child: Container(
+                  height: 48,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Order history',
+                        style: kManRope_500_16_001314,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  const OrderHistoryScreen()));
+                        },
+                        child: SvgPicture.asset(
+                          'assets/icons/rightArrow.svg',
+                          height: 12,
+                          width: 6,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              Text(
+                'Help and support',
+                style: kManRope_400_12_626A6A,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AgreementScreen()));
+                },
+                child: Container(
+                  height: 48,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Agreements',
+                        style: kManRope_500_16_001314,
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => const AgreementScreen())),
+                        child: SvgPicture.asset(
+                          'assets/icons/rightArrow.svg',
+                          height: 12,
+                          width: 6,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const HelpAndSupportScreen()));
+                },
+                child: Container(
+                  height: 48,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Help and support',
+                        style: kManRope_500_16_001314,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  const HelpAndSupportScreen()));
+                        },
+                        child: SvgPicture.asset(
+                          'assets/icons/rightArrow.svg',
+                          height: 12,
+                          width: 6,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              Text(
+                'Settings',
+                style: kManRope_400_12_626A6A,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Order history',
+                    'Notifications',
                     style: kManRope_500_16_001314,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const OrderHistoryScreen()));
+                  FlutterSwitch(
+                    width: 60.w,
+                    height: 28.h,
+                    toggleSize: 20,
+                    activeColor: k006D77,
+                    value: _switchValue,
+                    onToggle: (val) {
+                      setState(() {
+                        _switchValue = val;
+                      });
                     },
-                    child: SvgPicture.asset(
-                      'assets/icons/rightArrow.svg',
-                      height: 12,
-                      width: 6,
-                    ),
                   ),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 54.h,
-            ),
-            Text(
-              'Help and support',
-              style: kManRope_400_12_626A6A,
-            ),
-            SizedBox(
-              height: 37.h,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const AgreementScreen()));
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Agreements',
-                    style: kManRope_500_16_001314,
-                  ),
-                  GestureDetector(
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AgreementScreen())),
-                    child: SvgPicture.asset(
-                      'assets/icons/rightArrow.svg',
-                      height: 12,
-                      width: 6,
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: 40.h,
               ),
-            ),
-            SizedBox(
-              height: 52.h,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const HelpAndSupportScreen()));
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Help and support',
-                    style: kManRope_500_16_001314,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const HelpAndSupportScreen()));
-                    },
-                    child: SvgPicture.asset(
-                      'assets/icons/rightArrow.svg',
-                      height: 12,
-                      width: 6,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 54.h,
-            ),
-            Text(
-              'Settings',
-              style: kManRope_400_12_626A6A,
-            ),
-            SizedBox(
-              height: 52.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Notifications',
-                  style: kManRope_500_16_001314,
+              GestureDetector(
+                onTap: () {
+                  _logOutBottomSheet();
+                },
+                child: Text(
+                  'Log Out',
+                  style: kManRope_500_16_B64949,
                 ),
-                FlutterSwitch(
-                  width: 60.w,
-                  height: 28.h,
-                  toggleSize: 20,
-                  activeColor: k006D77,
-                  value: _switchValue,
-                  onToggle: (val) {
-                    setState(() {
-                      _switchValue = val;
-                    });
-                  },
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 54.h,
-            ),
-            GestureDetector(
-              onTap: () {
-                _logOutBottomSheet();
-              },
-              child: Text(
-                'Log Out',
-                style: kManRope_500_16_B64949,
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

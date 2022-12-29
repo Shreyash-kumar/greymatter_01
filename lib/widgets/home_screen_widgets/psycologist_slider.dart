@@ -15,7 +15,7 @@ class PsychologistSlider extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          //width: 280.h,
+          width: 290.w,
           child: Row(
             children: [
               Container(
@@ -23,7 +23,7 @@ class PsychologistSlider extends StatelessWidget {
                 height: 85.h,
                 clipBehavior: Clip.hardEdge,
                 decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    BoxDecoration(borderRadius: BorderRadius.circular(24)),
                 child: Image.asset('assets/images/userP.png'),
               ),
               SizedBox(width: 8.w),
@@ -31,7 +31,12 @@ class PsychologistSlider extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Raghuram Singh', style: kManRope_400_16_Black),
+                  SizedBox(
+                    width: 170,
+                    child: Text('Raghuram Singh',
+                        overflow: TextOverflow.ellipsis,
+                        style: kManRope_400_16_Black),
+                  ),
                   SizedBox(height: 8.h),
                   Text('psychologist', style: kManRope_400_14_626A6A),
                   SizedBox(height: 8.h),
@@ -52,20 +57,23 @@ class PsychologistSlider extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(
+                width: 17.w,
+              )
             ],
           ),
         ),
-        SizedBox(height: 16.h),
+        SizedBox(height: 20.h),
         Container(
-          //width: 280.h,
+          width: 280.h,
           child: Row(
             children: [
               Container(
-                width: 85.w,
-                height: 85.h,
+                width: 83.w,
+                height: 83.h,
                 clipBehavior: Clip.hardEdge,
                 decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    BoxDecoration(borderRadius: BorderRadius.circular(24)),
                 child: Image.asset('assets/images/userP.png'),
               ),
               SizedBox(width: 8.w),
@@ -73,7 +81,9 @@ class PsychologistSlider extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Raghuram Singh', style: kManRope_400_16_Black),
+                  Text('Raghuram Singh',
+                      overflow: TextOverflow.ellipsis,
+                      style: kManRope_400_16_Black),
                   SizedBox(height: 8.h),
                   Text('psychologist', style: kManRope_400_14_626A6A),
                   SizedBox(height: 8.h),

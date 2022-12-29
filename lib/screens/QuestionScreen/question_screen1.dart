@@ -6,9 +6,12 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../constants/colors.dart';
 import '../../form/form.dart';
 import '../../model/question_model.dart';
+import '../welcome_screen/welcome_screen.dart';
 
 class Questions extends StatefulWidget {
-  const Questions({Key? key}) : super(key: key);
+  const Questions({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<Questions> createState() => _QuestionsState();
@@ -116,7 +119,7 @@ class _QuestionsState extends State<Questions> {
                         children: [
                           SmoothPageIndicator(
                             controller: _pageController,
-                            count: 10,
+                            count: 9,
                             effect: WormEffect(
                               radius: 2,
                               dotWidth: 19.w,
@@ -126,11 +129,17 @@ class _QuestionsState extends State<Questions> {
                             ),
                           ),
                           SizedBox(
-                            width: 32.w,
+                            width: 40.w,
                           ),
-                          Text(
-                            "Skip all",
-                            style: kManRope_500_16_006D77,
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (ctx) => WelcomeScreen()));
+                            },
+                            child: Text(
+                              "Skip all",
+                              style: kManRope_500_16_006D77,
+                            ),
                           )
                         ],
                       ),
@@ -138,30 +147,33 @@ class _QuestionsState extends State<Questions> {
                     Spacer(),
                     AnimatedContainer(
                       duration: Duration(milliseconds: 300),
-                      curve: Curves.fastOutSlowIn,
+                      curve: Curves.easeIn,
                       height: (currentIndex == 0)
-                          ? 271.h
-                          : (currentIndex == 1 ||
-                                  currentIndex == 2 ||
-                                  currentIndex == 4 ||
-                                  currentIndex == 5 ||
-                                  currentIndex == 6)
-                              ? 405.h
-                              : (currentIndex == 3 || currentIndex == 8)
-                                  ? 353.h
-                                  : (currentIndex == 7)
-                                      ? 331.h
-                                      : (currentIndex == 9)
-                                          ? 375.h
-                                          : 250.h,
+                          ? 340.h
+                          : (currentIndex == 1 || currentIndex == 2)
+                              ? 500.h
+                              : (currentIndex == 4)
+                                  ? 490.h
+                                  : (currentIndex == 5)
+                                      ? 490.h
+                                      : (currentIndex == 3)
+                                          ? 446.h
+                                          : (currentIndex == 6)
+                                              ? 420.h
+                                              : (currentIndex == 7)
+                                                  ? 440.h
+                                                  : (currentIndex == 8)
+                                                      ? 470.h
+                                                      : 405.h,
                       child: PageView(
+                        physics: NeverScrollableScrollPhysics(),
                         controller: _pageController,
                         onPageChanged: (v) {
                           setState(() {
                             currentIndex = v;
                           });
                         },
-                        children: List.generate(8, (i) {
+                        children: List.generate(questionList.length, (i) {
                           return Form1(
                             index: i,
                             questions: questionList[i].question,
@@ -169,13 +181,16 @@ class _QuestionsState extends State<Questions> {
                                 questionList[i].questionController,
                             labels: questionList[i].label,
                             onNextTap: () {
-                              if (i != 7) {
+                              if (i != 8) {
                                 _pageController.nextPage(
                                   duration: Duration(milliseconds: 300),
                                   curve: Curves.fastOutSlowIn,
                                 );
                               } else {
                                 // SharedPrefs.setQuestionsLog(true);
+
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (ctx) => WelcomeScreen()));
                                 /* Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -196,6 +211,10 @@ class _QuestionsState extends State<Questions> {
                             builder: (_) => DashBoard(),
                           ),
                         );*/
+                        _pageController.nextPage(
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.fastOutSlowIn,
+                        );
                       },
                       child: Container(
                         color: Colors.transparent,
