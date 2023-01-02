@@ -23,6 +23,20 @@ class _GoalScreenState extends State<GoalScreen> {
     shape: BoxShape.rectangle,
   );
 
+  final sc = DraggableScrollableController();
+  final sc2 = ScrollController();
+  List dx = [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +55,7 @@ class _GoalScreenState extends State<GoalScreen> {
             TableCalendar(
               focusedDay: selectedDay,
               firstDay: DateTime(2022),
-              lastDay: DateTime(2023),
+              lastDay: DateTime(2030),
               calendarFormat: CalendarFormat.week,
               headerVisible: false,
               calendarStyle: CalendarStyle(
@@ -130,66 +144,93 @@ class _GoalScreenState extends State<GoalScreen> {
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
                     itemBuilder: (ctx, index) {
-                      return Container(
-                        margin: EdgeInsets.only(top: 16.h),
-                        height: 81.h,
-                        width: 380.w,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: k5A72ED,
-                        ),
-                        child: Stack(
-                          alignment: Alignment.centerLeft,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset(
-                                  'assets/images/Framedots.png',
-
-                                  //height: 81.h,
-                                ),
-                                Expanded(
-                                  child: Image.asset(
-                                    'assets/images/Dots.png',
-                                    width: 81.w,
-                                    height: 81.h,
-                                    fit: BoxFit.fitHeight,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 18.w),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      SvgPicture.asset(
-                                        'assets/icons/run.svg',
-                                        height: 36.w,
-                                        width: 36.w,
-                                        fit: BoxFit.fill,
-                                      ),
-                                      SizedBox(width: 12.w),
-                                      Text(
-                                        'Running',
-                                        style: kManRope_500_16_white,
-                                      ),
-                                    ],
-                                  ),
-                                  SvgPicture.asset(
-                                    'assets/icons/greyTick.svg',
-                                    height: 36.w,
-                                    width: 36.w,
-                                  ),
-                                ],
+                      return Stack(
+                        children: [
+                          GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              margin: EdgeInsets.only(top: 16.h),
+                              width: 90.h,
+                              height: 81.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.horizontal(
+                                    left: Radius.circular(10)),
+                                color: kBC5656,
+                              ),
+                              padding: EdgeInsets.all(15),
+                              child: Image.asset(
+                                'assets/images/bin.png',
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          Transform.translate(
+                            offset: Offset(dx[index], 0),
+                            child: GestureDetector(
+                              onHorizontalDragUpdate: (v) {
+                                setState(() {
+                                  dx[index] =
+                                      (dx[index] + v.delta.dx).clamp(0.0, 81.h);
+                                  //print(_dx);
+                                });
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(top: 16.h),
+                                height: 81.h,
+                                clipBehavior: Clip.hardEdge,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: k5A72ED,
+                                ),
+                                child: Stack(
+                                  alignment: Alignment.centerLeft,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: Image.asset(
+                                            'assets/images/Framedots.png',
+                                            fit: BoxFit.fitWidth,
+                                            //height: 81.h,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 18.w),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              SvgPicture.asset(
+                                                'assets/icons/run.svg',
+                                                height: 36.w,
+                                                width: 36.w,
+                                                fit: BoxFit.fill,
+                                              ),
+                                              SizedBox(width: 12.w),
+                                              Text(
+                                                'Running',
+                                                style: kManRope_500_16_white,
+                                              ),
+                                            ],
+                                          ),
+                                          SvgPicture.asset(
+                                            'assets/icons/greyTick.svg',
+                                            height: 36.w,
+                                            width: 36.w,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       );
                     },
                     separatorBuilder: (ctx, index) {

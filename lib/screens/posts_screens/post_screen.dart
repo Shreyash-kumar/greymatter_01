@@ -33,16 +33,25 @@ class _PostScreenState extends State<PostScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(),
                   GestureDetector(
                     onTap: () {
                       setState(() {
                         _index = 0;
                       });
                     },
-                    child: Text(
-                      'Posts',
-                      style: kManRope_700_16_001314,
+                    child: Column(
+                      children: [
+                        Text(
+                          'Posts',
+                          style: kManRope_700_16_001314,
+                        ),
+                        Container(
+                          height: 3.h,
+                          width: 60.w,
+                          margin: EdgeInsets.only(top: 14),
+                          color: _index == 0 ? k006D77 : Colors.white,
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(),
@@ -52,36 +61,23 @@ class _PostScreenState extends State<PostScreen> {
                         _index = 1;
                       });
                     },
-                    child: Text(
-                      'Saved',
-                      style: kManRope_700_16_001314,
+                    child: Column(
+                      children: [
+                        Text(
+                          'Saved',
+                          style: kManRope_700_16_001314,
+                        ),
+                        Container(
+                          height: 3.h,
+                          width: 60.w,
+                          margin: EdgeInsets.only(top: 14),
+                          color: _index == 1 ? k006D77 : Colors.white,
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(
                     width: 1.w,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 14.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 2.h,
-                    width: 60.w,
-                    color: _index == 0 ? k006D77 : Colors.white,
-                  ),
-                  SizedBox(),
-                  Container(
-                    height: 2.h,
-                    width: 60.w,
-                    color: _index == 1 ? k006D77 : Colors.white,
-                  ),
-                  SizedBox(
-                    width: 5.w,
                   ),
                 ],
               ),

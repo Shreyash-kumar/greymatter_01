@@ -309,7 +309,7 @@ class _AddNewActivityState extends State<AddNewActivity> {
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 30,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),

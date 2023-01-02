@@ -303,7 +303,7 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                 ],
               ),
               SizedBox(
-                height: 39.h,
+                height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -319,7 +319,7 @@ class _CreateNewActivityState extends State<CreateNewActivity> {
                 ],
               ),
               SizedBox(
-                height: 180.h,
+                height: 100.h,
               ),
               Center(
                 child: SizedBox(
