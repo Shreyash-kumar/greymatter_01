@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -152,15 +153,31 @@ class _EditPersonalInfoState extends State<EditPersonalInfo> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Column(
                 children: [
-                  Container(
-                    height: 106.h,
-                    width: 106.w,
-                    decoration: const BoxDecoration(
-                        color: Color(0xFF006D77), shape: BoxShape.circle),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      DottedBorder(
+                        color: k006D77,
+                        strokeWidth: 1,
+                        borderType: BorderType.Circle,
+                        child: Container(
+                          height: 106.h,
+                          width: 106.w,
+                          decoration: const BoxDecoration(
+                              color: Color(0xFF006D77), shape: BoxShape.circle),
+                        ),
+                      ),
+                    ],
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Change Photo",
+                    style: kManRope_500_16_404040,
+                  )
                 ],
               ),
               SizedBox(
